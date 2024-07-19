@@ -2,11 +2,6 @@ GIT:
 
 ### 1. Adicionar seu amigo como colaborador no GitHub
 
-1. Vá para a página do repositório no GitHub.
-2. Clique em **Settings** (Configurações).
-3. No menu lateral, clique em **Collaborators** (Colaboradores).
-4. Adicione o nome de usuário do GitHub do seu amigo e envie o convite.
-
 Seu amigo receberá um e-mail com o convite para colaborar no repositório. Ele deve aceitar o convite para ter acesso ao projeto⁴.
 
 ### 2. Clonar o repositório

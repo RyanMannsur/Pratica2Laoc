@@ -1,7 +1,5 @@
 GIT:
 
-Ótimo! Para que seu amigo possa colaborar no projeto, você pode seguir estes passos:
-
 ### 1. Adicionar seu amigo como colaborador no GitHub
 
 1. Vá para a página do repositório no GitHub.

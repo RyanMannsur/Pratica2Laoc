@@ -1,0 +1,126 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\aneli\Downloads\pratica2desenv\simulation\modelsim
+vaddSub
+I=Vbe0fcnP=m`NzbnY^f913
+Vfj>knM@Fg<fCk2SlU^AWH2
+Z1 dC:\Users\aneli\Downloads\pratica2desenv\simulation\modelsim
+w1721255415
+8C:/Users/aneli/Downloads/pratica2desenv/addSub.v
+FC:/Users/aneli/Downloads/pratica2desenv/addSub.v
+L0 1
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work +incdir+C:/Users/aneli/Downloads/pratica2desenv -O0
+nadd@sub
+!i10b 1
+!s100 XMHo=<8TDM8hmkc4;T8G93
+!s85 0
+!s108 1721414869.119000
+!s107 C:/Users/aneli/Downloads/pratica2desenv/addSub.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aneli/Downloads/pratica2desenv|C:/Users/aneli/Downloads/pratica2desenv/addSub.v|
+!s101 -O0
+vcontrole
+IjzmkQ4TJ6hH;D@>9OL2mj2
+VBCAMF@<>IR0:gQY]9:XnE2
+R1
+w1721414595
+8C:/Users/aneli/Downloads/pratica2desenv/controle.v
+FC:/Users/aneli/Downloads/pratica2desenv/controle.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 YSO0LXzVY`D4^oM3JkFBY1
+!s85 0
+!s108 1721414869.259000
+!s107 C:/Users/aneli/Downloads/pratica2desenv/controle.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aneli/Downloads/pratica2desenv|C:/Users/aneli/Downloads/pratica2desenv/controle.v|
+!s101 -O0
+vmux
+I9NCT]1@b=i2VX8;P:Gc^c1
+VBUg^e2H5m@jT?hnzOA`:31
+R1
+w1721414118
+8C:/Users/aneli/Downloads/pratica2desenv/mux.v
+FC:/Users/aneli/Downloads/pratica2desenv/mux.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 GJVUjifn4GnzgKObjge9`0
+!s85 0
+!s108 1721414869.041000
+!s107 C:/Users/aneli/Downloads/pratica2desenv/mux.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aneli/Downloads/pratica2desenv|C:/Users/aneli/Downloads/pratica2desenv/mux.v|
+!s101 -O0
+vpratica2
+I8>g2HO@zDKAe<U>f>`ASN3
+VPW4d<n_Hl<j7CV8Q?Rf1>3
+R1
+w1721414580
+8C:/Users/aneli/Downloads/pratica2desenv/pratica2.v
+FC:/Users/aneli/Downloads/pratica2desenv/pratica2.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 _b:=Oi;E96`d?Cf?T94@K1
+!s85 0
+!s108 1721414868.969000
+!s107 C:/Users/aneli/Downloads/pratica2desenv/pratica2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aneli/Downloads/pratica2desenv|C:/Users/aneli/Downloads/pratica2desenv/pratica2.v|
+!s101 -O0
+vregistrador
+!i10b 1
+!s100 :0VLiO?9:G:G18lNghdck1
+Ia8BR8iUZaS0H^>l0A<9R33
+Vb3L_3d;ZcD0Go<F7`4fZ]2
+R1
+w1721255400
+8C:/Users/aneli/Downloads/pratica2desenv/registrador.v
+FC:/Users/aneli/Downloads/pratica2desenv/registrador.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1721414869.329000
+!s107 C:/Users/aneli/Downloads/pratica2desenv/registrador.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aneli/Downloads/pratica2desenv|C:/Users/aneli/Downloads/pratica2desenv/registrador.v|
+!s101 -O0
+R3
+R4
+vupcount
+Id=[1[dILz@WT@lC<YX3F<1
+VY<idG]@Nz64jEeNJQ:Rz^0
+R1
+w1721255290
+8C:/Users/aneli/Downloads/pratica2desenv/upcount.v
+FC:/Users/aneli/Downloads/pratica2desenv/upcount.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 eQUY?MU<fiUY80fRjZ;T>0
+!s85 0
+!s108 1721414869.189000
+!s107 C:/Users/aneli/Downloads/pratica2desenv/upcount.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aneli/Downloads/pratica2desenv|C:/Users/aneli/Downloads/pratica2desenv/upcount.v|
+!s101 -O0

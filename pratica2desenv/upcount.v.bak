@@ -1,0 +1,12 @@
+module upcount(
+    input Clear,
+    input Clock,
+    output reg [1:0] Q
+);
+    always @(posedge Clock or posedge Clear) begin
+        if (Clear)
+            Q <= 2'b00; // Reseta o contador
+        else
+            Q <= Q + 1'b1; // Incrementa o contador
+    end
+endmodule

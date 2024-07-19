@@ -1,0 +1,6 @@
+
+State Machine - |pratica2|controle:ctrl|Tstate
+Name Tstate.000 Tstate.T2 Tstate.T1 
+Tstate.000 0 0 0 
+Tstate.T1 1 0 1 
+Tstate.T2 1 1 0 

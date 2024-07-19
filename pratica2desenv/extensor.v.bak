@@ -1,0 +1,7 @@
+module extensor(in, out);
+//fazer um extensor e bits para quando recebe um imediato
+
+	input [2:0] in;
+	output [15:0] out;
+	
+endmodule

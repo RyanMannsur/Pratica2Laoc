@@ -1,0 +1,183 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do pratica2_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/aneli/Downloads/pratica2desenv {C:/Users/aneli/Downloads/pratica2desenv/pratica2.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module pratica2
+# 
+# Top level modules:
+# 	pratica2
+# vlog -vlog01compat -work work +incdir+C:/Users/aneli/Downloads/pratica2desenv {C:/Users/aneli/Downloads/pratica2desenv/mux.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module mux
+# 
+# Top level modules:
+# 	mux
+# vlog -vlog01compat -work work +incdir+C:/Users/aneli/Downloads/pratica2desenv {C:/Users/aneli/Downloads/pratica2desenv/addSub.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module addSub
+# 
+# Top level modules:
+# 	addSub
+# vlog -vlog01compat -work work +incdir+C:/Users/aneli/Downloads/pratica2desenv {C:/Users/aneli/Downloads/pratica2desenv/upcount.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module upcount
+# 
+# Top level modules:
+# 	upcount
+# vlog -vlog01compat -work work +incdir+C:/Users/aneli/Downloads/pratica2desenv {C:/Users/aneli/Downloads/pratica2desenv/controle.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module controle
+# 
+# Top level modules:
+# 	controle
+# vlog -vlog01compat -work work +incdir+C:/Users/aneli/Downloads/pratica2desenv {C:/Users/aneli/Downloads/pratica2desenv/registrador.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module registrador
+# 
+# Top level modules:
+# 	registrador
+# 
+vsim work.pratica2
+# vsim work.pratica2 
+# Loading work.pratica2
+# Loading work.upcount
+# Loading work.registrador
+# Loading work.mux
+# Loading work.addSub
+# Loading work.controle
+# ** Warning: (vsim-3017) C:/Users/aneli/Downloads/pratica2desenv/pratica2.v(49): [TFMPC] - Too few port connections. Expected 21, found 18.
+# 
+#         Region: /pratica2/mux_inst
+# ** Warning: (vsim-3722) C:/Users/aneli/Downloads/pratica2desenv/pratica2.v(49): [TFMPC] - Missing connection for port 'din'.
+# 
+# ** Warning: (vsim-3722) C:/Users/aneli/Downloads/pratica2desenv/pratica2.v(49): [TFMPC] - Missing connection for port 'g'.
+# 
+# ** Warning: (vsim-3722) C:/Users/aneli/Downloads/pratica2desenv/pratica2.v(49): [TFMPC] - Missing connection for port 'din_out'.
+# 
+# ** Warning: (vsim-3017) C:/Users/aneli/Downloads/pratica2desenv/pratica2.v(71): [TFMPC] - Too few port connections. Expected 26, found 25.
+# 
+#         Region: /pratica2/ctrl
+# ** Warning: (vsim-3015) C:/Users/aneli/Downloads/pratica2desenv/pratica2.v(71): [PCDPC] - Port size (10 or 10) does not match connection size (9) for port 'ir'. The port definition is at: C:/Users/aneli/Downloads/pratica2desenv/controle.v(1).
+# 
+#         Region: /pratica2/ctrl
+# ** Warning: (vsim-3722) C:/Users/aneli/Downloads/pratica2desenv/pratica2.v(71): [TFMPC] - Missing connection for port 'dinout'.
+# 
+wave create -driver freeze -pattern clock -initialvalue HiZ -period 100ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/pratica2/clock
+wave create -driver freeze -pattern constant -value 1 -starttime 0ps -endtime 1000ps sim:/pratica2/run
+wave create -driver freeze -pattern clock -initialvalue HiZ -period 200ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/pratica2/resetn
+wave create -driver freeze -pattern constant -value 10000000 -range 15 0 -starttime 0ps -endtime 1000ps sim:/pratica2/din
+wave create -driver freeze -pattern constant -value 000001010 -range 8 0 -starttime 0ps -endtime 1000ps sim:/pratica2/ir
+run
+add wave -position end  sim:/pratica2/q
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# 
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/clock "Time value must be greater than "now": 1000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/run ""
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/resetn "Time value must be greater than "now": 1000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/din ""
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/ir ""
+run
+run
+# 
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/clock "Time value must be greater than "now": 1000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/run ""
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/resetn "Time value must be greater than "now": 1000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/din ""
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/ir ""
+run
+run
+# 
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/clock "Time value must be greater than "now": 1000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/run ""
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/resetn "Time value must be greater than "now": 1000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/din ""
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/ir ""
+run
+run
+# 
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/clock "Time value must be greater than "now": 1000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/run ""
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/resetn "Time value must be greater than "now": 1000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/din ""
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/ir ""
+run
+run
+# 
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/clock "Time value must be greater than "now": 1000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/run ""
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/resetn "Time value must be greater than "now": 1000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/din ""
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/ir ""
+run
+run
+# 
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/clock "Time value must be greater than "now": 1000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/run ""
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/resetn "Time value must be greater than "now": 1000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/din ""
+# Internal Error: In tclprim_ApplyStimulus for /pratica2/ir ""
+add wave -position end  sim:/pratica2/buswire
+restart
+# ** Warning: (vsim-3017) C:/Users/aneli/Downloads/pratica2desenv/pratica2.v(49): [TFMPC] - Too few port connections. Expected 21, found 18.
+# 
+#         Region: /pratica2/mux_inst
+# ** Warning: (vsim-3722) C:/Users/aneli/Downloads/pratica2desenv/pratica2.v(49): [TFMPC] - Missing connection for port 'din'.
+# 
+# ** Warning: (vsim-3722) C:/Users/aneli/Downloads/pratica2desenv/pratica2.v(49): [TFMPC] - Missing connection for port 'g'.
+# 
+# ** Warning: (vsim-3722) C:/Users/aneli/Downloads/pratica2desenv/pratica2.v(49): [TFMPC] - Missing connection for port 'din_out'.
+# 
+# ** Warning: (vsim-3017) C:/Users/aneli/Downloads/pratica2desenv/pratica2.v(71): [TFMPC] - Too few port connections. Expected 26, found 25.
+# 
+#         Region: /pratica2/ctrl
+# ** Warning: (vsim-3015) C:/Users/aneli/Downloads/pratica2desenv/pratica2.v(71): [PCDPC] - Port size (10 or 10) does not match connection size (9) for port 'ir'. The port definition is at: C:/Users/aneli/Downloads/pratica2desenv/controle.v(1).
+# 
+#         Region: /pratica2/ctrl
+# ** Warning: (vsim-3722) C:/Users/aneli/Downloads/pratica2desenv/pratica2.v(71): [TFMPC] - Missing connection for port 'dinout'.
+# 
+run -all
+wave create -pattern constant -value 010 -range 15 0 -starttime 0ps -endtime 1000ps sim:/pratica2/r0

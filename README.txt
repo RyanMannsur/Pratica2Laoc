@@ -16,8 +16,7 @@ Seu amigo pode clonar o repositório para a máquina dele usando o comando `git 
 1. Abra o terminal ou prompt de comando.
 2. Navegue até o diretório onde ele deseja clonar o repositório.
 3. Execute o comando:
-   git clone https://github.com/SEU_USUARIO/Pratica2Laoc.git
-   Substitua `SEU_USUARIO` pelo seu nome de usuário no GitHub.
+   git clone link do clocne
 
 ### 3. Desenvolver e colaborar
 

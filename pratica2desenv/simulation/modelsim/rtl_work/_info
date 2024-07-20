@@ -2,35 +2,35 @@ m255
 K3
 13
 cModel Technology
-Z0 dC:\Users\aneli\Downloads\pratica2desenv\simulation\modelsim
+Z0 dC:\Verilog\pratica2desenv\simulation\modelsim
 vaddSub
-I=Vbe0fcnP=m`NzbnY^f913
+I@;W;zec8E:dngBg2_[YV03
 Vfj>knM@Fg<fCk2SlU^AWH2
-Z1 dC:\Users\aneli\Downloads\pratica2desenv\simulation\modelsim
-w1721255415
-8C:/Users/aneli/Downloads/pratica2desenv/addSub.v
-FC:/Users/aneli/Downloads/pratica2desenv/addSub.v
+Z1 dC:\Verilog\pratica2desenv\simulation\modelsim
+w1721255416
+8C:/Verilog/pratica2desenv/addSub.v
+FC:/Verilog/pratica2desenv/addSub.v
 L0 1
 Z2 OV;L;10.1d;51
 r1
 31
 Z3 o-vlog01compat -work work -O0
-Z4 !s92 -vlog01compat -work work +incdir+C:/Users/aneli/Downloads/pratica2desenv -O0
+Z4 !s92 -vlog01compat -work work +incdir+C:/Verilog/pratica2desenv -O0
 nadd@sub
 !i10b 1
-!s100 XMHo=<8TDM8hmkc4;T8G93
+!s100 F1akHnCaG8g86@FJ7Kl172
 !s85 0
-!s108 1721414869.119000
-!s107 C:/Users/aneli/Downloads/pratica2desenv/addSub.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aneli/Downloads/pratica2desenv|C:/Users/aneli/Downloads/pratica2desenv/addSub.v|
+!s108 1721495611.580000
+!s107 C:/Verilog/pratica2desenv/addSub.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/pratica2desenv|C:/Verilog/pratica2desenv/addSub.v|
 !s101 -O0
 vcontrole
-IjzmkQ4TJ6hH;D@>9OL2mj2
+IS0UI6LD<WVNP@dZhY[SSc3
 VBCAMF@<>IR0:gQY]9:XnE2
 R1
-w1721414595
-8C:/Users/aneli/Downloads/pratica2desenv/controle.v
-FC:/Users/aneli/Downloads/pratica2desenv/controle.v
+w1721492950
+8C:/Verilog/pratica2desenv/controle.v
+FC:/Verilog/pratica2desenv/controle.v
 L0 1
 R2
 r1
@@ -38,19 +38,19 @@ r1
 R3
 R4
 !i10b 1
-!s100 YSO0LXzVY`D4^oM3JkFBY1
+!s100 Pbaez^abA6i[DYZf@TzNH1
 !s85 0
-!s108 1721414869.259000
-!s107 C:/Users/aneli/Downloads/pratica2desenv/controle.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aneli/Downloads/pratica2desenv|C:/Users/aneli/Downloads/pratica2desenv/controle.v|
+!s108 1721495611.694000
+!s107 C:/Verilog/pratica2desenv/controle.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/pratica2desenv|C:/Verilog/pratica2desenv/controle.v|
 !s101 -O0
 vmux
-I9NCT]1@b=i2VX8;P:Gc^c1
+IQnmBJVQLGkn`717;Ffmmn3
 VBUg^e2H5m@jT?hnzOA`:31
 R1
-w1721414118
-8C:/Users/aneli/Downloads/pratica2desenv/mux.v
-FC:/Users/aneli/Downloads/pratica2desenv/mux.v
+w1721414120
+8C:/Verilog/pratica2desenv/mux.v
+FC:/Verilog/pratica2desenv/mux.v
 L0 1
 R2
 r1
@@ -58,19 +58,39 @@ r1
 R3
 R4
 !i10b 1
-!s100 GJVUjifn4GnzgKObjge9`0
+!s100 8E[L3kHoa[Yi]=IaamLLm1
 !s85 0
-!s108 1721414869.041000
-!s107 C:/Users/aneli/Downloads/pratica2desenv/mux.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aneli/Downloads/pratica2desenv|C:/Users/aneli/Downloads/pratica2desenv/mux.v|
+!s108 1721495611.449000
+!s107 C:/Verilog/pratica2desenv/mux.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/pratica2desenv|C:/Verilog/pratica2desenv/mux.v|
+!s101 -O0
+vmux2to1
+ID1VPcYSjG0JookBYH]KMb3
+VQOoiDT;gUfH?Zm7<kQE1I1
+R1
+w1721418990
+8C:/Verilog/pratica2desenv/mux2tol.v
+FC:/Verilog/pratica2desenv/mux2tol.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 Hf^jI8IKWW4M`d<UeBI`g0
+!s85 0
+!s108 1721495612.001000
+!s107 C:/Verilog/pratica2desenv/mux2tol.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/pratica2desenv|C:/Verilog/pratica2desenv/mux2tol.v|
 !s101 -O0
 vpratica2
-I8>g2HO@zDKAe<U>f>`ASN3
-VPW4d<n_Hl<j7CV8Q?Rf1>3
+IFWP@4XRfWCBJY0:fb=aLN3
+VYZ516WZN_GB;IP6_fHdMS3
 R1
-w1721414580
-8C:/Users/aneli/Downloads/pratica2desenv/pratica2.v
-FC:/Users/aneli/Downloads/pratica2desenv/pratica2.v
+w1721494903
+8C:/Verilog/pratica2desenv/pratica2.v
+FC:/Verilog/pratica2desenv/pratica2.v
 L0 1
 R2
 r1
@@ -78,39 +98,19 @@ r1
 R3
 R4
 !i10b 1
-!s100 _b:=Oi;E96`d?Cf?T94@K1
+!s100 ioO4Gg4o^GTNd<HU^U:i<2
 !s85 0
-!s108 1721414868.969000
-!s107 C:/Users/aneli/Downloads/pratica2desenv/pratica2.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aneli/Downloads/pratica2desenv|C:/Users/aneli/Downloads/pratica2desenv/pratica2.v|
+!s108 1721495611.333000
+!s107 C:/Verilog/pratica2desenv/pratica2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/pratica2desenv|C:/Verilog/pratica2desenv/pratica2.v|
 !s101 -O0
 vregistrador
-!i10b 1
-!s100 :0VLiO?9:G:G18lNghdck1
-Ia8BR8iUZaS0H^>l0A<9R33
+Ikh4WH99bBh78HHT<BZC[M1
 Vb3L_3d;ZcD0Go<F7`4fZ]2
 R1
 w1721255400
-8C:/Users/aneli/Downloads/pratica2desenv/registrador.v
-FC:/Users/aneli/Downloads/pratica2desenv/registrador.v
-L0 1
-R2
-r1
-!s85 0
-31
-!s108 1721414869.329000
-!s107 C:/Users/aneli/Downloads/pratica2desenv/registrador.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aneli/Downloads/pratica2desenv|C:/Users/aneli/Downloads/pratica2desenv/registrador.v|
-!s101 -O0
-R3
-R4
-vupcount
-Id=[1[dILz@WT@lC<YX3F<1
-VY<idG]@Nz64jEeNJQ:Rz^0
-R1
-w1721255290
-8C:/Users/aneli/Downloads/pratica2desenv/upcount.v
-FC:/Users/aneli/Downloads/pratica2desenv/upcount.v
+8C:/Verilog/pratica2desenv/registrador.v
+FC:/Verilog/pratica2desenv/registrador.v
 L0 1
 R2
 r1
@@ -118,9 +118,29 @@ r1
 R3
 R4
 !i10b 1
-!s100 eQUY?MU<fiUY80fRjZ;T>0
+!s100 n61=Yn0>;[3lR=B]`aK_n3
 !s85 0
-!s108 1721414869.189000
-!s107 C:/Users/aneli/Downloads/pratica2desenv/upcount.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aneli/Downloads/pratica2desenv|C:/Users/aneli/Downloads/pratica2desenv/upcount.v|
+!s108 1721495611.825000
+!s107 C:/Verilog/pratica2desenv/registrador.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/pratica2desenv|C:/Verilog/pratica2desenv/registrador.v|
 !s101 -O0
+vtest_bench_mux
+!i10b 1
+!s100 V88FQdCK44ok;98PZX4lm1
+IdlO8JU`[BB]J2<IB9IE3n2
+V4;i>PnO5gLKR=Ko1NB;eg2
+R1
+w1721495516
+8C:/Verilog/pratica2desenv/test_bench_mux.v
+FC:/Verilog/pratica2desenv/test_bench_mux.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1721495612.145000
+!s107 C:/Verilog/pratica2desenv/test_bench_mux.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/pratica2desenv|C:/Verilog/pratica2desenv/test_bench_mux.v|
+!s101 -O0
+R3
+R4

@@ -1,5 +1,5 @@
 EDA Netlist Writer report for pratica2
-Fri Jul 19 16:57:42 2024
+Sat Jul 20 14:17:33 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Fri Jul 19 16:57:42 2024 ;
+; EDA Netlist Writer Status ; Successful - Sat Jul 20 14:17:33 2024 ;
 ; Revision Name             ; pratica2                              ;
 ; Top-level Entity Name     ; pratica2                              ;
 ; Family                    ; Cyclone II                            ;
@@ -66,16 +66,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                                                          ;
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                                                     ;
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; C:/Users/ryane/OneDrive/Documentos/Ryan Facul/Ryan Facul/11º Semestre/LAOCII/pratica2desenv/simulation/modelsim/pratica2.vo         ;
-; C:/Users/ryane/OneDrive/Documentos/Ryan Facul/Ryan Facul/11º Semestre/LAOCII/pratica2desenv/simulation/modelsim/pratica2_fast.vo    ;
-; C:/Users/ryane/OneDrive/Documentos/Ryan Facul/Ryan Facul/11º Semestre/LAOCII/pratica2desenv/simulation/modelsim/pratica2_v.sdo      ;
-; C:/Users/ryane/OneDrive/Documentos/Ryan Facul/Ryan Facul/11º Semestre/LAOCII/pratica2desenv/simulation/modelsim/pratica2_v_fast.sdo ;
-+-------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------+
+; Simulation Generated Files                                        ;
++-------------------------------------------------------------------+
+; Generated Files                                                   ;
++-------------------------------------------------------------------+
+; C:/Verilog/pratica2desenv/simulation/modelsim/pratica2.vo         ;
+; C:/Verilog/pratica2desenv/simulation/modelsim/pratica2_fast.vo    ;
+; C:/Verilog/pratica2desenv/simulation/modelsim/pratica2_v.sdo      ;
+; C:/Verilog/pratica2desenv/simulation/modelsim/pratica2_v_fast.sdo ;
++-------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -84,12 +84,12 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Jul 19 16:57:41 2024
+    Info: Processing started: Sat Jul 20 14:17:32 2024
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off pratica2 -c pratica2
-Info (204026): Generated files "pratica2.vo", "pratica2_fast.vo", "pratica2_v.sdo" and "pratica2_v_fast.sdo" in directory "C:/Users/ryane/OneDrive/Documentos/Ryan Facul/Ryan Facul/11º Semestre/LAOCII/pratica2desenv/simulation/modelsim/" for EDA simulation tool
+Info (204026): Generated files "pratica2.vo", "pratica2_fast.vo", "pratica2_v.sdo" and "pratica2_v_fast.sdo" in directory "C:/Verilog/pratica2desenv/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4524 megabytes
-    Info: Processing ended: Fri Jul 19 16:57:42 2024
+    Info: Processing ended: Sat Jul 20 14:17:33 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

@@ -4,7 +4,7 @@
 ; Hierarchy        ; Input ; Constant Input ; Unused Input ; Floating Input ; Output ; Constant Output ; Unused Output ; Floating Output ; Bidir ; Constant Bidir ; Unused Bidir ; Input only Bidir ; Output only Bidir ;
 +------------------+-------+----------------+--------------+----------------+--------+-----------------+---------------+-----------------+-------+----------------+--------------+------------------+-------------------+
 ; buswire_mux_inst ; 33    ; 0              ; 0            ; 0              ; 16     ; 0               ; 0             ; 0               ; 0     ; 0              ; 0            ; 0                ; 0                 ;
-; ctrl             ; 13    ; 1              ; 0            ; 1              ; 21     ; 1               ; 1             ; 1               ; 0     ; 0              ; 0            ; 0                ; 0                 ;
+; ctrl             ; 13    ; 1              ; 0            ; 1              ; 22     ; 1               ; 1             ; 1               ; 0     ; 0              ; 0            ; 0                ; 0                 ;
 ; add_sub_inst     ; 33    ; 0              ; 0            ; 0              ; 16     ; 0               ; 0             ; 0               ; 0     ; 0              ; 0            ; 0                ; 0                 ;
 ; mux_inst         ; 137   ; 0              ; 0            ; 0              ; 16     ; 0               ; 0             ; 0               ; 0     ; 0              ; 0            ; 0                ; 0                 ;
 ; regG             ; 18    ; 0              ; 0            ; 0              ; 16     ; 0               ; 0             ; 0               ; 0     ; 0              ; 0            ; 0                ; 0                 ;

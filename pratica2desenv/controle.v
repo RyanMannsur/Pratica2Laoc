@@ -20,7 +20,15 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 	parameter T0 = 3'b000, T1 = 3'b001, T2 = 3'b010, T3 = 3'b011, T4 = 3'b100, T5 = 3'b101;		
 	
 	always@(posedge clock) begin
-		if(done) begin
+		if(done) begin //volta pra T0
+			done <= 1'b0;
+			Tstate = T0;
+		end
+		if(resetn) begin
+			done <= 1'b1;
+			Tstate = T0;
+		end
+		else begin //zerando sinais
 			g_out <= 1'b0;
 			dinout <= 1'b0;
 			add_sub <= 1'b0;
@@ -42,14 +50,6 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 			r7_in <= 1'b0;
 			a_in <= 1'b0;
 			g_in <= 1'b0;
-			done <= 1'b0;
-			Tstate = T0;
-		end
-		if(resetn) begin
-			done <= 1'b1;
-			Tstate = T0;
-		end
-		else
 		case(Tstate)
 			T0: if(run) begin
 				case (ir[8:6])
@@ -129,8 +129,9 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 							3'b110: r6_out <= 1'b1;
 						endcase
 					end
-					SUB: begin //RYout Gin
+					SUB: begin //RYout Gin AddSub
 						g_in <= 1'b1;
+						add_sub <= 1'b1;
 						case (ir[2:0]) // ir = III XXX YYY
 							3'b000: r0_out <= 1'b1;
 							3'b001: r1_out <= 1'b1;
@@ -159,9 +160,8 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 						endcase
 						done <= 1'b1;
 					end
-					SUB: begin //Gout RXin ADDSUB DONE
+					SUB: begin //Gout RXin DONE
 						g_out <= 1'b1;
-						add_sub <= 1'b1;
 						case (ir[5:3]) // ir = III XXX YYY
 							3'b000: r0_in <= 1'b1;
 							3'b001: r1_in <= 1'b1;
@@ -177,5 +177,6 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 				Tstate = T0;
 			end
 		endcase
+	end
 	end
 endmodule

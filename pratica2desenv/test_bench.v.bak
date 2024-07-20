@@ -1,0 +1,53 @@
+module test_bench;
+
+
+
+	reg clock, run, resetn; 
+	reg [8:0]ir;
+	reg [15:0] din;
+	wire [15:0] q; 
+	
+	initial begin
+		clock = 1'b0;
+		resetn = 1'b0;
+		run = 1'b1;
+		ir = 9'b0000000;
+		din = 16'b0000000000000000;
+	end
+	
+	initial begin
+		#25 clock = 1'b1;//1
+		#25 address = 5'b10000;
+		#25 clock = 1'b0; //0
+		#25 clock = 1'b1; //1
+		
+		#25 clock = ~clock;  address = 5'b00001; //0
+		#25 clock = ~clock;//1
+		
+		#25 clock = ~clock; wren = 1'b1; //0
+		#25 clock = ~clock; //1
+		
+		#25 clock = ~clock;  address = 5'b01001; data = 8'b0000100; //0
+		#25 clock = ~clock; //1
+		
+		#25 clock = ~clock;  wren = 1'b0; address = 5'b00101;//0
+		#25 clock = ~clock; //1
+		
+		#25 clock = ~clock;  wren = 1'b1; address = 5'b01101; data = 8'b00000001;//0
+		#25 clock = ~clock; //1
+		
+		#25 clock = ~clock;  wren = 1'b0; address = 5'b00001;//0
+		#25 clock = ~clock; //1
+		
+		#25 clock = ~clock;  address = 5'b01001; //0
+		#25 clock = ~clock; //1
+		
+		#50 ;
+		
+	end
+	
+		cache dut(clock, clk, address, wren, hit, valido, LRU, dirty, data, q);
+
+
+
+endmodule

@@ -13,9 +13,8 @@ module pratica2(clock, ir, din, run, resetn, q);
     wire [15:0] buswire;
     wire [15:0] r0, r1, r2, r3, r4, r5, r6, r7, A, G;
     wire r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, r6_in, r7_in;
-    wire r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out;
+    wire r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, g_out, dinout;
     wire a_in, g_in, add_sub, done;
-    wire a_out, g_out; // Sinais de controle para A_out e G_out
     wire select_addsub; // Sinal de controle para selecionar entre MUX e addSub
     wire [15:0] addsub_out; // Sinal intermediário para a saída do addSub
 
@@ -69,7 +68,7 @@ module pratica2(clock, ir, din, run, resetn, q);
         .r4_in(r4_in), .r5_in(r5_in), .r6_in(r6_in), .r7_in(r7_in),
         .r0_out(r0_out), .r1_out(r1_out), .r2_out(r2_out), .r3_out(r3_out),
         .r4_out(r4_out), .r5_out(r5_out), .r6_out(r6_out), .r7_out(r7_out),
-        .a_in(a_in), .g_in(g_in), .g_out(g_out), // Adicionando sinais de controle
+        .a_in(a_in), .g_in(g_in), .g_out(g_out), .dinout(dinout), // Adicionando sinais de controle
         .add_sub(add_sub), .done(done) // Adicionando controle de seleção
     );
 

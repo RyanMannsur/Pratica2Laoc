@@ -3,7 +3,7 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 //Bloco controle, feito para receber a instrução e mapear os sinais que serão usados nos outros
 //modulos
 					
-	input [9:0]ir; //instruções no formato III XXX YYY ou III XXX DDD
+	input [8:0]ir; //instruções no formato III XXX YYY ou III XXX DDD
 	input run, resetn, clock; //Sinais de entrada
 	output reg done, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, r6_in,
 			r7_in, r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out,

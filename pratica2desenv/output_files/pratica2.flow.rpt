@@ -1,5 +1,5 @@
 Flow report for pratica2
-Sat Jul 20 14:17:33 2024
+Mon Jul 22 09:21:34 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,18 +40,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Sat Jul 20 14:17:33 2024           ;
+; Flow Status                        ; Successful - Mon Jul 22 09:21:34 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; pratica2                                        ;
 ; Top-level Entity Name              ; pratica2                                        ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C35F672C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 248 / 33,216 ( < 1 % )                          ;
-;     Total combinational functions  ; 226 / 33,216 ( < 1 % )                          ;
-;     Dedicated logic registers      ; 151 / 33,216 ( < 1 % )                          ;
-; Total registers                    ; 151                                             ;
-; Total pins                         ; 44 / 475 ( 9 % )                                ;
+; Total logic elements               ; 277 / 33,216 ( < 1 % )                          ;
+;     Total combinational functions  ; 241 / 33,216 ( < 1 % )                          ;
+;     Dedicated logic registers      ; 167 / 33,216 ( < 1 % )                          ;
+; Total registers                    ; 167                                             ;
+; Total pins                         ; 258 / 475 ( 54 % )                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 483,840 ( 0 % )                             ;
 ; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                  ;
@@ -64,44 +64,52 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/20/2024 14:17:05 ;
+; Start date & time ; 07/22/2024 09:20:55 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; pratica2            ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                 ;
-+--------------------------------------+---------------------------------------+---------------+-------------+---------------------+
-; Assignment Name                      ; Value                                 ; Default Value ; Entity Name ; Section Id          ;
-+--------------------------------------+---------------------------------------+---------------+-------------+---------------------+
-; COMPILER_SIGNATURE_ID                ; 110073160804028.172149582508144       ; --            ; --          ; --                  ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; test_bench          ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; test_bench_controle ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; test_bench_mux      ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; test_bench_mux                        ; --            ; --          ; eda_simulation      ;
-; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                           ; --            ; --          ; eda_simulation      ;
-; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)             ; <None>        ; --          ; --                  ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                       ; --            ; --          ; eda_simulation      ;
-; EDA_TEST_BENCH_FILE                  ; test_bench.v                          ; --            ; --          ; test_bench          ;
-; EDA_TEST_BENCH_FILE                  ; test_bench_controle.v                 ; --            ; --          ; test_bench_controle ;
-; EDA_TEST_BENCH_FILE                  ; test_bench_mux.v                      ; --            ; --          ; test_bench_mux      ;
-; EDA_TEST_BENCH_MODULE_NAME           ; test_bench                            ; --            ; --          ; test_bench          ;
-; EDA_TEST_BENCH_MODULE_NAME           ; test_bench_controle                   ; --            ; --          ; test_bench_controle ;
-; EDA_TEST_BENCH_MODULE_NAME           ; test_bench_mux                        ; --            ; --          ; test_bench_mux      ;
-; EDA_TEST_BENCH_NAME                  ; test_bench                            ; --            ; --          ; eda_simulation      ;
-; EDA_TEST_BENCH_NAME                  ; test_bench_controle                   ; --            ; --          ; eda_simulation      ;
-; EDA_TEST_BENCH_NAME                  ; test_bench_mux                        ; --            ; --          ; eda_simulation      ;
-; EDA_TIME_SCALE                       ; 1 ps                                  ; --            ; --          ; eda_simulation      ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                    ; --            ; --          ; --                  ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                     ; --            ; --          ; --                  ;
-; PARTITION_COLOR                      ; 16764057                              ; --            ; --          ; Top                 ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; PLACEMENT_AND_ROUTING                 ; --            ; --          ; Top                 ;
-; PARTITION_NETLIST_TYPE               ; SOURCE                                ; --            ; --          ; Top                 ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                   ; --            ; --          ; --                  ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --                  ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                          ; --            ; --          ; --                  ;
-+--------------------------------------+---------------------------------------+---------------+-------------+---------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                    ;
++--------------------------------------+---------------------------------------+---------------+-------------+------------------------+
+; Assignment Name                      ; Value                                 ; Default Value ; Entity Name ; Section Id             ;
++--------------------------------------+---------------------------------------+---------------+-------------+------------------------+
+; COMPILER_SIGNATURE_ID                ; 110073160804028.172165085509492       ; --            ; --          ; --                     ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; test_bench             ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; test_bench_controle    ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; test_bench_mux         ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; test_bench_registrador ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; test_bench_addSub      ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; test_bench                            ; --            ; --          ; eda_simulation         ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                           ; --            ; --          ; eda_simulation         ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)             ; <None>        ; --          ; --                     ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                       ; --            ; --          ; eda_simulation         ;
+; EDA_TEST_BENCH_FILE                  ; test_bench.v                          ; --            ; --          ; test_bench             ;
+; EDA_TEST_BENCH_FILE                  ; test_bench_controle.v                 ; --            ; --          ; test_bench_controle    ;
+; EDA_TEST_BENCH_FILE                  ; test_bench_mux.v                      ; --            ; --          ; test_bench_mux         ;
+; EDA_TEST_BENCH_FILE                  ; test_bench_registrador.v              ; --            ; --          ; test_bench_registrador ;
+; EDA_TEST_BENCH_FILE                  ; test_bench_addSub.v                   ; --            ; --          ; test_bench_addSub      ;
+; EDA_TEST_BENCH_MODULE_NAME           ; test_bench                            ; --            ; --          ; test_bench             ;
+; EDA_TEST_BENCH_MODULE_NAME           ; test_bench_controle                   ; --            ; --          ; test_bench_controle    ;
+; EDA_TEST_BENCH_MODULE_NAME           ; test_bench_mux                        ; --            ; --          ; test_bench_mux         ;
+; EDA_TEST_BENCH_MODULE_NAME           ; test_bench_registrador                ; --            ; --          ; test_bench_registrador ;
+; EDA_TEST_BENCH_MODULE_NAME           ; test_bench_addSub                     ; --            ; --          ; test_bench_addSub      ;
+; EDA_TEST_BENCH_NAME                  ; test_bench                            ; --            ; --          ; eda_simulation         ;
+; EDA_TEST_BENCH_NAME                  ; test_bench_controle                   ; --            ; --          ; eda_simulation         ;
+; EDA_TEST_BENCH_NAME                  ; test_bench_mux                        ; --            ; --          ; eda_simulation         ;
+; EDA_TEST_BENCH_NAME                  ; test_bench_registrador                ; --            ; --          ; eda_simulation         ;
+; EDA_TEST_BENCH_NAME                  ; test_bench_addSub                     ; --            ; --          ; eda_simulation         ;
+; EDA_TIME_SCALE                       ; 1 ps                                  ; --            ; --          ; eda_simulation         ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                    ; --            ; --          ; --                     ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                     ; --            ; --          ; --                     ;
+; PARTITION_COLOR                      ; 16764057                              ; --            ; --          ; Top                    ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; PLACEMENT_AND_ROUTING                 ; --            ; --          ; Top                    ;
+; PARTITION_NETLIST_TYPE               ; SOURCE                                ; --            ; --          ; Top                    ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                   ; --            ; --          ; --                     ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --                     ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                          ; --            ; --          ; --                     ;
++--------------------------------------+---------------------------------------+---------------+-------------+------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -109,12 +117,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 4588 MB             ; 00:00:02                           ;
-; Fitter                    ; 00:00:14     ; 1.0                     ; 4872 MB             ; 00:00:12                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 4559 MB             ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4545 MB             ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4507 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:23     ; --                      ; --                  ; 00:00:20                           ;
+; Analysis & Synthesis      ; 00:00:05     ; 1.0                     ; 4587 MB             ; 00:00:03                           ;
+; Fitter                    ; 00:00:21     ; 1.0                     ; 4883 MB             ; 00:00:18                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 4559 MB             ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4545 MB             ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4523 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:34     ; --                      ; --                  ; 00:00:27                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

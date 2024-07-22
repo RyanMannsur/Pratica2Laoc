@@ -18,7 +18,7 @@ entity controle is
     );
     port(
         clock           : in     vl_logic;
-        ir              : in     vl_logic_vector(9 downto 0);
+        ir              : in     vl_logic_vector(8 downto 0);
         run             : in     vl_logic;
         resetn          : in     vl_logic;
         r0_in           : out    vl_logic;

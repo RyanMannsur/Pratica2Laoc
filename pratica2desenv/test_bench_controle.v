@@ -17,10 +17,11 @@ module test_bench_controle;
 	
 	initial begin
 		#25 clock = 1'b1;//1
-		#25 clock = 1'b0; //0
+		#25 clock = 1'b0; //0 
+		ir = 9'b000001000; //MV R1 R0
 		
 		#25 clock = ~clock; //1  
-		ir = 9'b000001000; //MV R1 R0
+		
 		
 		#25 clock = 1'b0;//0
 		ir = 9'b010001001; //ADD R1 R1

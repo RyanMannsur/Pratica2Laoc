@@ -40,24 +40,22 @@
 # 
 # Top level modules:
 # 	registrador
-# vlog -vlog01compat -work work +incdir+C:/Verilog/pratica2desenv {C:/Verilog/pratica2desenv/mux2tol.v}
+# 
+# vlog -vlog01compat -work work +incdir+C:/Verilog/pratica2desenv {C:/Verilog/pratica2desenv/test_bench.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module mux2to1
+# -- Compiling module test_bench
 # 
 # Top level modules:
-# 	mux2to1
+# 	test_bench
 # 
-# vlog -vlog01compat -work work +incdir+C:/Verilog/pratica2desenv {C:/Verilog/pratica2desenv/test_bench_mux.v}
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module test_bench_mux
-# 
-# Top level modules:
-# 	test_bench_mux
-# 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  test_bench_mux
-# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps test_bench_mux 
-# Loading work.test_bench_mux
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  test_bench
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps test_bench 
+# Loading work.test_bench
+# Loading work.pratica2
+# Loading work.registrador
 # Loading work.mux
+# Loading work.addSub
+# Loading work.controle
 # 
 # add wave *
 # view structure

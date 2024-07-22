@@ -1,16 +1,19 @@
-module registrador(clock, buswire, wren, data_out);
+module registrador(
+    input clock,
+    input wren,
+    input [15:0] buswire,
+    input [15:0] valor_anterior,
+    output reg [15:0] data_out
+);
 
-//A ideia aqui é mapear qnd vai ter escrita em um registrador
-//Considerando que A e G funcionam tbm como se fosse registradores
 
-	input clock, wren;
-	input [15:0] buswire;
-	output reg[15:0] data_out;
-	
-	always @(posedge clock) begin
+    // Bloco sempre para atualizar o registrador
+    always @(negedge clock) begin
         if (wren) begin
-            data_out <= buswire;
+            data_out <= buswire; // Atribuição não bloqueante
+        end else begin
+            data_out <= valor_anterior; // Atribuição não bloqueante
         end
     end
-	
+
 endmodule

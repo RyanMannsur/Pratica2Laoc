@@ -20,15 +20,15 @@ nadd@sub
 !i10b 1
 !s100 F1akHnCaG8g86@FJ7Kl172
 !s85 0
-!s108 1721495611.580000
+!s108 1721650923.652000
 !s107 C:/Verilog/pratica2desenv/addSub.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/pratica2desenv|C:/Verilog/pratica2desenv/addSub.v|
 !s101 -O0
 vcontrole
-IS0UI6LD<WVNP@dZhY[SSc3
-VBCAMF@<>IR0:gQY]9:XnE2
+I;W5hcgKL]0M]UESY6k=2d1
+V96APnNC1gZ7aYT3i^EFdl0
 R1
-w1721492950
+w1721602821
 8C:/Verilog/pratica2desenv/controle.v
 FC:/Verilog/pratica2desenv/controle.v
 L0 1
@@ -38,17 +38,17 @@ r1
 R3
 R4
 !i10b 1
-!s100 Pbaez^abA6i[DYZf@TzNH1
+!s100 mSG9IP7SY0?gSO@4U>D:W0
 !s85 0
-!s108 1721495611.694000
+!s108 1721650923.813000
 !s107 C:/Verilog/pratica2desenv/controle.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/pratica2desenv|C:/Verilog/pratica2desenv/controle.v|
 !s101 -O0
 vmux
-IQnmBJVQLGkn`717;Ffmmn3
-VBUg^e2H5m@jT?hnzOA`:31
+IKBR?RcM^fUaPHLP@`SWOV2
+VbIScT^hJOVf7[XBB4RAdE1
 R1
-w1721414120
+w1721650312
 8C:/Verilog/pratica2desenv/mux.v
 FC:/Verilog/pratica2desenv/mux.v
 L0 1
@@ -58,37 +58,17 @@ r1
 R3
 R4
 !i10b 1
-!s100 8E[L3kHoa[Yi]=IaamLLm1
+!s100 A@H3kG=KhdSVY@YlkF2kl3
 !s85 0
-!s108 1721495611.449000
+!s108 1721650923.478000
 !s107 C:/Verilog/pratica2desenv/mux.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/pratica2desenv|C:/Verilog/pratica2desenv/mux.v|
 !s101 -O0
-vmux2to1
-ID1VPcYSjG0JookBYH]KMb3
-VQOoiDT;gUfH?Zm7<kQE1I1
-R1
-w1721418990
-8C:/Verilog/pratica2desenv/mux2tol.v
-FC:/Verilog/pratica2desenv/mux2tol.v
-L0 1
-R2
-r1
-31
-R3
-R4
-!i10b 1
-!s100 Hf^jI8IKWW4M`d<UeBI`g0
-!s85 0
-!s108 1721495612.001000
-!s107 C:/Verilog/pratica2desenv/mux2tol.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/pratica2desenv|C:/Verilog/pratica2desenv/mux2tol.v|
-!s101 -O0
 vpratica2
-IFWP@4XRfWCBJY0:fb=aLN3
-VYZ516WZN_GB;IP6_fHdMS3
+I5HUl=>C30K6ZZ:ZljcECE0
+V1zH@<@lEZHMS4><Z28F8G3
 R1
-w1721494903
+w1721650853
 8C:/Verilog/pratica2desenv/pratica2.v
 FC:/Verilog/pratica2desenv/pratica2.v
 L0 1
@@ -98,17 +78,17 @@ r1
 R3
 R4
 !i10b 1
-!s100 ioO4Gg4o^GTNd<HU^U:i<2
+!s100 ?HiP]hmPTAfBnZEEL_1>D0
 !s85 0
-!s108 1721495611.333000
+!s108 1721650923.311000
 !s107 C:/Verilog/pratica2desenv/pratica2.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/pratica2desenv|C:/Verilog/pratica2desenv/pratica2.v|
 !s101 -O0
 vregistrador
-Ikh4WH99bBh78HHT<BZC[M1
-Vb3L_3d;ZcD0Go<F7`4fZ]2
+IRc_JzzdQA0:dz:NG7CP2D3
+V3CNDnV2ibj`oaVjPo@?;Y3
 R1
-w1721255400
+w1721649996
 8C:/Verilog/pratica2desenv/registrador.v
 FC:/Verilog/pratica2desenv/registrador.v
 L0 1
@@ -118,29 +98,29 @@ r1
 R3
 R4
 !i10b 1
-!s100 n61=Yn0>;[3lR=B]`aK_n3
+!s100 271h<<7a212^?1gNmEXC=2
 !s85 0
-!s108 1721495611.825000
+!s108 1721650923.974000
 !s107 C:/Verilog/pratica2desenv/registrador.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/pratica2desenv|C:/Verilog/pratica2desenv/registrador.v|
 !s101 -O0
-vtest_bench_mux
+vtest_bench
 !i10b 1
-!s100 V88FQdCK44ok;98PZX4lm1
-IdlO8JU`[BB]J2<IB9IE3n2
-V4;i>PnO5gLKR=Ko1NB;eg2
+!s100 BED5K0hEhX[L;fdBY?PCl0
+I2;5YU_Uo6z[nTENZAb]jL2
+VEJNK5ZO7TWUP1egUA9^TR1
 R1
-w1721495516
-8C:/Verilog/pratica2desenv/test_bench_mux.v
-FC:/Verilog/pratica2desenv/test_bench_mux.v
+w1721650499
+8C:/Verilog/pratica2desenv/test_bench.v
+FC:/Verilog/pratica2desenv/test_bench.v
 L0 1
 R2
 r1
 !s85 0
 31
-!s108 1721495612.145000
-!s107 C:/Verilog/pratica2desenv/test_bench_mux.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/pratica2desenv|C:/Verilog/pratica2desenv/test_bench_mux.v|
+!s108 1721650924.103000
+!s107 C:/Verilog/pratica2desenv/test_bench.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/pratica2desenv|C:/Verilog/pratica2desenv/test_bench.v|
 !s101 -O0
 R3
 R4

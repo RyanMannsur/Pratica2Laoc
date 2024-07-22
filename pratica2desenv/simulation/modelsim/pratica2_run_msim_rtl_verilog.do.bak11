@@ -10,7 +10,6 @@ vlog -vlog01compat -work work +incdir+C:/Verilog/pratica2desenv {C:/Verilog/prat
 vlog -vlog01compat -work work +incdir+C:/Verilog/pratica2desenv {C:/Verilog/pratica2desenv/addSub.v}
 vlog -vlog01compat -work work +incdir+C:/Verilog/pratica2desenv {C:/Verilog/pratica2desenv/controle.v}
 vlog -vlog01compat -work work +incdir+C:/Verilog/pratica2desenv {C:/Verilog/pratica2desenv/registrador.v}
-vlog -vlog01compat -work work +incdir+C:/Verilog/pratica2desenv {C:/Verilog/pratica2desenv/mux2tol.v}
 
 vlog -vlog01compat -work work +incdir+C:/Verilog/pratica2desenv {C:/Verilog/pratica2desenv/test_bench.v}
 

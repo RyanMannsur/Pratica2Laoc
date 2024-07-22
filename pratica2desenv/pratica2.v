@@ -1,4 +1,7 @@
-module pratica2(clock, ir, din, run, resetn, q);
+module pratica2(clock, ir, din, run, resetn, q,r0t, r1t, r2t, r3t, r4t, r5t, r6t, r7t, At, Gt,
+ r0_int, r1_int, r2_int, r3_int, r4_int, r5_int, r6_int, r7_int,
+     r0_outt, r1_outt, r2_outt, r3_outt, r4_outt, r5_outt, r6_outt, r7_outt, g_outt, dinoutt,
+     a_int, g_int, add_subt, donet, addsub_outt, buswiret);
 
     input clock;
     input run;
@@ -8,55 +11,41 @@ module pratica2(clock, ir, din, run, resetn, q);
     output [15:0] q;
 
     // Sinais internos
-    wire [3:0] instrucao_atual;
-    wire [15:0] buswire_mux;
     wire [15:0] buswire;
     wire [15:0] r0, r1, r2, r3, r4, r5, r6, r7, A, G;
     wire r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, r6_in, r7_in;
     wire r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, g_out, dinout;
     wire a_in, g_in, add_sub, done;
-    wire select_addsub; // Sinal de controle para selecionar entre MUX e addSub
     wire [15:0] addsub_out; // Sinal intermediário para a saída do addSub
-
-    reg [1:0] clock_counter; // Contador de clock
-
-    // Instanciando o contador de instruções
-    upcount contador (
-        .Clear(resetn),
-        .Clock(clock),
-        .Enable(done),
-        .Q(instrucao_atual)
-    );
+	 
+	 output [15:0]r0t, r1t, r2t, r3t, r4t, r5t, r6t, r7t, At, Gt, addsub_outt, buswiret;
+	 
+	 output r0_int, r1_int, r2_int, r3_int, r4_int, r5_int, r6_int, r7_int;
+    output r0_outt, r1_outt, r2_outt, r3_outt, r4_outt, r5_outt, r6_outt, r7_outt, g_outt, dinoutt;
+    output a_int, g_int, add_subt, donet;
 
     // Instanciando os registradores
-    registrador reg0 (.clock(clock), .buswire(buswire), .wren(r0_in), .data_out(r0));
-    registrador reg1 (.clock(clock), .buswire(buswire), .wren(r1_in), .data_out(r1));
-    registrador reg2 (.clock(clock), .buswire(buswire), .wren(r2_in), .data_out(r2));
-    registrador reg3 (.clock(clock), .buswire(buswire), .wren(r3_in), .data_out(r3));
-    registrador reg4 (.clock(clock), .buswire(buswire), .wren(r4_in), .data_out(r4));
-    registrador reg5 (.clock(clock), .buswire(buswire), .wren(r5_in), .data_out(r5));
-    registrador reg6 (.clock(clock), .buswire(buswire), .wren(r6_in), .data_out(r6));
-    registrador reg7 (.clock(clock), .buswire(buswire), .wren(r7_in), .data_out(r7));
-
-    // Instanciando os módulos A e G
-    registrador regA (.clock(clock), .buswire(buswire), .wren(a_in), .data_out(A));
-    registrador regG (.clock(clock), .buswire(buswire), .wren(g_in), .data_out(G));
+    registrador reg0 (.clock(clock), .valor_anterior(r0), .buswire(buswire), .wren(r0_in), .data_out(r0));
+	 registrador reg1 (.clock(clock), .valor_anterior(r1), .buswire(buswire), .wren(r1_in), .data_out(r1));
+	 registrador reg2 (.clock(clock), .valor_anterior(r2), .buswire(buswire), .wren(r2_in), .data_out(r2));
+	 registrador reg3 (.clock(clock), .valor_anterior(r3), .buswire(buswire), .wren(r3_in), .data_out(r3));
+	 registrador reg4 (.clock(clock), .valor_anterior(r4), .buswire(buswire), .wren(r4_in), .data_out(r4));
+	 registrador reg5 (.clock(clock), .valor_anterior(r5), .buswire(buswire), .wren(r5_in), .data_out(r5));
+	 registrador reg6 (.clock(clock), .valor_anterior(r6), .buswire(buswire), .wren(r6_in), .data_out(r6));
+	 registrador reg7 (.clock(clock), .valor_anterior(r7), .buswire(buswire), .wren(r7_in), .data_out(r7));
+	 
+	 registrador regA (.clock(clock), .valor_anterior(A), .buswire(buswire), .wren(a_in), .data_out(A));
+	 registrador regG (.clock(clock), .valor_anterior(G), .buswire(addsub_out), .wren(g_in), .data_out(G));
 
     // Instanciando o MUX
     mux mux_inst (
-        .r0(r0), .r1(r1), .r2(r2), .r3(r3), .r4(r4), .r5(r5), .r6(r6), .r7(r7),
-        .r0_out(r0_out), .r1_out(r1_out), .r2_out(r2_out), .r3_out(r3_out),
-        .r4_out(r4_out), .r5_out(r5_out), .r6_out(r6_out), .r7_out(r7_out), .g_out(g_out),
-        .buswires(buswire_mux)
+        .din(din), .r0(r0), .r1(r1), .r2(r2), .r3(r3), .r4(r4), .r5(r5), .r6(r6), .r7(r7),
+		  .r0_out(r0_out), .r1_out(r1_out), .r2_out(r2_out), .r3_out(r3_out), .r4_out(r4_out),
+		  .r5_out(r5_out), .r6_out(r6_out), .r7_out(r7_out), .G(G), .g_out(g_out), .dinout(dinout),
+        .buswires(buswire)
     );
-
-    // Instanciando o módulo de soma/subtração
-    addSub add_sub_inst (
-        .add_sub(add_sub),
-        .rx(A),
-        .ry(buswire),
-        .data_out(addsub_out) // Usando o sinal intermediário
-    );
+	 
+	 addSub addSub(.add_sub(add_sub), .rx(A), .ry(buswire), .data_out(addsub_out));
 
     // Instanciando o módulo de controle
     controle ctrl (
@@ -72,25 +61,45 @@ module pratica2(clock, ir, din, run, resetn, q);
         .add_sub(add_sub), .done(done) // Adicionando controle de seleção
     );
 
-    // Lógica do contador de clock
-    always @(posedge clock or negedge resetn) begin
-        if (!resetn)
-            clock_counter <= 2'b00;
-        else if (done)
-            clock_counter <= 2'b00;
-        else
-            clock_counter <= clock_counter + 1;
-    end
-
-    // Instanciando o MUX 2:1 para selecionar o valor do buswire
-    mux2to1 buswire_mux_inst (
-        .in0(buswire_mux),
-        .in1(addsub_out),
-        .sel(clock_counter >= 2),
-        .out(buswire)
-    );
-
     // Saída do processador
     assign q = buswire;
+	 assign r0t = r0;
+	 assign r1t = r1;
+	 assign r2t = r2;
+	 assign r3t = r3;
+	 assign r4t = r4;
+	 assign r5t = r5;
+	 assign r6t = r6;
+	 assign r7t = r7;
+	 assign Gt = G;
+	 assign At = A;
+	 assign addsub_outt = addsub_out;
+	 assign buswiret = buswire;
+	 
+	 
+	 assign r0_int = r0_in;
+    assign r1_int = r1_in;
+    assign r2_int = r2_in;
+    assign r3_int = r3_in;
+    assign r4_int = r4_in;
+    assign r5_int = r5_in;
+    assign r6_int = r6_in;
+    assign r7_int = r7_in;
+
+    assign r0_outt = r0_out;
+    assign r1_outt = r1_out;
+    assign r2_outt = r2_out;
+    assign r3_outt = r3_out;
+    assign r4_outt = r4_out;
+    assign r5_outt = r5_out;
+    assign r6_outt = r6_out;
+    assign r7_outt = r7_out;
+
+    assign g_outt = g_out;
+    assign dinoutt = dinout;
+    assign a_int = a_in;
+    assign g_int = g_in;
+    assign add_subt = add_sub;
+    assign donet = done;
 
 endmodule

@@ -1,18 +1,18 @@
-module pratica2(clock, ir, din, run, resetn, q,r0t, r1t, r2t, r3t, r4t, r5t, r6t, r7t, At, Gt,
+module pratica2(clock, din, run, resetn, q,r0t, r1t, r2t, r3t, r4t, r5t, r6t, r7t, At, Gt,
  r0_int, r1_int, r2_int, r3_int, r4_int, r5_int, r6_int, r7_int,
      r0_outt, r1_outt, r2_outt, r3_outt, r4_outt, r5_outt, r6_outt, r7_outt, g_outt, dinoutt,
-     a_int, g_int, add_subt, donet, addsub_outt, buswiret);
-
+     a_int, g_int, add_subt, donet, addsub_outt, buswiret, irt);
+	  
     input clock;
     input run;
     input resetn;
     input [15:0] din;
-    input [8:0] ir; // Instrução no formato III XXX YYY
+    reg [8:0] ir; // Instrução no formato III XXX YYY
     output [15:0] q;
 
     // Sinais internos
     wire [15:0] buswire;
-    wire [15:0] r0, r1, r2, r3, r4, r5, r6, r7, A, G;
+    wire [15:0] r0, r1, r2, r3, r4, r5, r6, r7, A, G, addr, dout;
     wire r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, r6_in, r7_in;
     wire r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, g_out, dinout;
     wire a_in, g_in, add_sub, done;
@@ -23,6 +23,20 @@ module pratica2(clock, ir, din, run, resetn, q,r0t, r1t, r2t, r3t, r4t, r5t, r6t
 	 output r0_int, r1_int, r2_int, r3_int, r4_int, r5_int, r6_int, r7_int;
     output r0_outt, r1_outt, r2_outt, r3_outt, r4_outt, r5_outt, r6_outt, r7_outt, g_outt, dinoutt;
     output a_int, g_int, add_subt, donet;
+	 output [8:0]irt;
+	 
+	 reg [8:0] memoria [7:0]; //Tamanho 8, com 9 bits cada.
+	 integer index;
+	 initial begin
+		$readmemb("C:/Verilog/pratica2desenv/mem_file.mem", memoria); //inicializo a Memoria de instruções
+		index = 0;
+		ir = memoria[index][8:0];
+   end
+	
+	always@(r7) begin
+		index = r7[7:0];
+		ir = memoria[index][8:0];
+	end
 
     // Instanciando os registradores
     registrador reg0 (.clock(clock), .valor_anterior(r0), .buswire(buswire), .wren(r0_in), .data_out(r0));
@@ -32,7 +46,20 @@ module pratica2(clock, ir, din, run, resetn, q,r0t, r1t, r2t, r3t, r4t, r5t, r6t
 	 registrador reg4 (.clock(clock), .valor_anterior(r4), .buswire(buswire), .wren(r4_in), .data_out(r4));
 	 registrador reg5 (.clock(clock), .valor_anterior(r5), .buswire(buswire), .wren(r5_in), .data_out(r5));
 	 registrador reg6 (.clock(clock), .valor_anterior(r6), .buswire(buswire), .wren(r6_in), .data_out(r6));
-	 registrador reg7 (.clock(clock), .valor_anterior(r7), .buswire(buswire), .wren(r7_in), .data_out(r7));
+	 
+	 upcount reg7(
+    .Clear(resetn),
+    .Clock(clock),
+	 .Q_anterior(r7),
+	 .valor(buswire),
+	 .wren(r7_in),
+	 .Enable(done),
+    .Q(r7)
+);
+	 //addr é o endereço que irei mapear para escrever lá na memoria
+	 registrador regADDR (.clock(clock), .valor_anterior(addr), .buswire(buswire), .wren(addr_in), .data_out(addr));
+	// dout é o valor que irei gravar no endereço addr
+	registrador regDOUT (.clock(clock), .valor_anterior(dout), .buswire(buswire), .wren(dout_in), .data_out(dout));
 	 
 	 registrador regA (.clock(clock), .valor_anterior(A), .buswire(buswire), .wren(a_in), .data_out(A));
 	 registrador regG (.clock(clock), .valor_anterior(G), .buswire(addsub_out), .wren(g_in), .data_out(G));
@@ -101,5 +128,6 @@ module pratica2(clock, ir, din, run, resetn, q,r0t, r1t, r2t, r3t, r4t, r5t, r6t
     assign g_int = g_in;
     assign add_subt = add_sub;
     assign donet = done;
+	 assign irt = ir;
 
 endmodule

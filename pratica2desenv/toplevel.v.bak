@@ -1,0 +1,21 @@
+module toplevel(SW,KEY,LEDR,LEDG,HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7);
+
+
+ pratica2 PROCESSADOR(.clock(KEY[3]), .ir(SW[17:9]), .din(SW[9:0]), .resetn(KEY[0]), .q(q));
+	
+ input [17:0]SW;
+ output q[15:0];
+ output [17:0]LEDR;
+ output [7:0]LEDG;
+ input [3:0]KEY;
+ output [0:6] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7;
+ wire [2:0]q;
+ 
+ //Mostrando dados de entrada
+	decodificador h_address(SW[12],HEX7[0:6]);
+	decodificador h2_address(SW[11:8],HEX6[0:6]);
+	decodificador h_data(SW[7:4],HEX5[0:6]);
+	decodificador h2_data(SW[3:0],HEX4[0:6]);
+	
+endmodule
+	

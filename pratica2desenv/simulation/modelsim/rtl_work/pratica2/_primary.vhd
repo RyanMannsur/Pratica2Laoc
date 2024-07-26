@@ -3,7 +3,6 @@ use verilog.vl_types.all;
 entity pratica2 is
     port(
         clock           : in     vl_logic;
-        ir              : in     vl_logic_vector(8 downto 0);
         din             : in     vl_logic_vector(15 downto 0);
         run             : in     vl_logic;
         resetn          : in     vl_logic;
@@ -41,6 +40,7 @@ entity pratica2 is
         add_subt        : out    vl_logic;
         donet           : out    vl_logic;
         addsub_outt     : out    vl_logic_vector(15 downto 0);
-        buswiret        : out    vl_logic_vector(15 downto 0)
+        buswiret        : out    vl_logic_vector(15 downto 0);
+        irt             : out    vl_logic_vector(8 downto 0)
     );
 end pratica2;

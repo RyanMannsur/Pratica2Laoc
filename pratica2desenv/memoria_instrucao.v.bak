@@ -1,0 +1,16 @@
+module memoria_instrucao()
+
+	 reg [8:0] memoria [7:0]; //Tamanho 8, com 9 bits cada.
+	 integer index;
+	 initial begin
+		$readmemb("C:/Verilog/pratica2desenv/mem_file.mem", memoria); //inicializo a Memoria de instruções
+		index = 0;
+   end
+	
+	always@(negedge clock) begin
+		index = r7[7:0];
+		ir = memoria[index][8:0];
+	end
+
+
+endmodule

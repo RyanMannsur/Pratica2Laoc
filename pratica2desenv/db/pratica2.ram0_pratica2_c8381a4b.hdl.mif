@@ -1,0 +1,19 @@
+-- begin_signature
+-- pratica2
+-- end_signature
+WIDTH=9;
+DEPTH=8;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	7 :	XXXXXXXXX;
+	6 :	XXXXXXXXX;
+	5 :	XXXXXXXXX;
+	4 :	XXXXXXXXX;
+	3 :	011001000;
+	2 :	010001000;
+	1 :	000001000;
+	0 :	001000000;
+END;

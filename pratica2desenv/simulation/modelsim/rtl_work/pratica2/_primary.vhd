@@ -40,7 +40,11 @@ entity pratica2 is
         add_subt        : out    vl_logic;
         donet           : out    vl_logic;
         addsub_outt     : out    vl_logic_vector(15 downto 0);
+        somat           : out    vl_logic;
+        comparacaot     : out    vl_logic;
+        zerot           : out    vl_logic;
+        maior_menort    : out    vl_logic;
         buswiret        : out    vl_logic_vector(15 downto 0);
-        irt             : out    vl_logic_vector(8 downto 0)
+        irt             : out    vl_logic_vector(9 downto 0)
     );
 end pratica2;

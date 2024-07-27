@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pratica2
-Fri Jul 26 19:28:27 2024
+Sat Jul 27 17:26:35 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -20,9 +20,10 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  12. General Register Statistics
  13. Multiplexer Restructuring Statistics (Restructuring Performed)
  14. Parameter Settings for User Entity Instance: controle:ctrl
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
- 17. Analysis & Synthesis Suppressed Messages
+ 15. Port Connectivity Checks: "controle:ctrl"
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+ 18. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -48,16 +49,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jul 26 19:28:27 2024           ;
+; Analysis & Synthesis Status        ; Successful - Sat Jul 27 17:26:35 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; pratica2                                        ;
 ; Top-level Entity Name              ; pratica2                                        ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 155                                             ;
-;     Total combinational functions  ; 123                                             ;
-;     Dedicated logic registers      ; 93                                              ;
-; Total registers                    ; 93                                              ;
-; Total pins                         ; 258                                             ;
+; Total logic elements               ; 271                                             ;
+;     Total combinational functions  ; 223                                             ;
+;     Dedicated logic registers      ; 114                                             ;
+; Total registers                    ; 114                                             ;
+; Total pins                         ; 263                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -181,28 +182,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 155   ;
+; Estimated Total logic elements              ; 271   ;
 ;                                             ;       ;
-; Total combinational functions               ; 123   ;
+; Total combinational functions               ; 223   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 50    ;
-;     -- 3 input functions                    ; 34    ;
-;     -- <=2 input functions                  ; 39    ;
+;     -- 4 input functions                    ; 125   ;
+;     -- 3 input functions                    ; 58    ;
+;     -- <=2 input functions                  ; 40    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 93    ;
+;     -- normal mode                          ; 193   ;
 ;     -- arithmetic mode                      ; 30    ;
 ;                                             ;       ;
-; Total registers                             ; 93    ;
-;     -- Dedicated logic registers            ; 93    ;
+; Total registers                             ; 114   ;
+;     -- Dedicated logic registers            ; 114   ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 258   ;
+; I/O pins                                    ; 263   ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clock ;
-; Maximum fan-out                             ; 93    ;
-; Total fan-out                               ; 812   ;
-; Average fan-out                             ; 1.71  ;
+; Maximum fan-out                             ; 114   ;
+; Total fan-out                               ; 1271  ;
+; Average fan-out                             ; 2.12  ;
 +---------------------------------------------+-------+
 
 
@@ -211,12 +212,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
-; |pratica2                  ; 123 (2)           ; 93 (0)       ; 0           ; 0            ; 0       ; 0         ; 258  ; 0            ; |pratica2                  ; work         ;
-;    |addSub:addSub|         ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|addSub:addSub    ; work         ;
-;    |controle:ctrl|         ; 21 (21)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|controle:ctrl    ; work         ;
-;    |mux:mux_inst|          ; 51 (51)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|mux:mux_inst     ; work         ;
+; |pratica2                  ; 223 (4)           ; 114 (0)      ; 0           ; 0            ; 0       ; 0         ; 263  ; 0            ; |pratica2                  ; work         ;
+;    |addSub:addSub|         ; 88 (88)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|addSub:addSub    ; work         ;
+;    |controle:ctrl|         ; 32 (32)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|controle:ctrl    ; work         ;
+;    |mux:mux_inst|          ; 83 (83)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|mux:mux_inst     ; work         ;
 ;    |registrador:reg0|      ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|registrador:reg0 ; work         ;
 ;    |registrador:reg1|      ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|registrador:reg1 ; work         ;
+;    |registrador:reg2|      ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|registrador:reg2 ; work         ;
 ;    |registrador:regA|      ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|registrador:regA ; work         ;
 ;    |registrador:regG|      ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|registrador:regG ; work         ;
 ;    |upcount:reg7|          ; 16 (16)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|upcount:reg7     ; work         ;
@@ -225,40 +227,57 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------+
-; State Machine - |pratica2|controle:ctrl|Tstate  ;
-+------------+------------+-----------+-----------+
-; Name       ; Tstate.000 ; Tstate.T2 ; Tstate.T1 ;
-+------------+------------+-----------+-----------+
-; Tstate.000 ; 0          ; 0         ; 0         ;
-; Tstate.T1  ; 1          ; 0         ; 1         ;
-; Tstate.T2  ; 1          ; 1         ; 0         ;
-+------------+------------+-----------+-----------+
++-------------------------------------------------------------+
+; State Machine - |pratica2|controle:ctrl|Tstate              ;
++------------+-----------+-----------+-----------+------------+
+; Name       ; Tstate.T3 ; Tstate.T2 ; Tstate.T1 ; Tstate.000 ;
++------------+-----------+-----------+-----------+------------+
+; Tstate.000 ; 0         ; 0         ; 0         ; 0          ;
+; Tstate.T1  ; 0         ; 0         ; 1         ; 1          ;
+; Tstate.T2  ; 0         ; 1         ; 0         ; 1          ;
+; Tstate.T3  ; 1         ; 0         ; 0         ; 1          ;
++------------+-----------+-----------+-----------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                 ;
-+-----------------------------------------------------+----------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal  ; Free of Timing Hazards ;
-+-----------------------------------------------------+----------------------+------------------------+
-; mux:mux_inst|buswires[0]                            ; mux:mux_inst|always0 ; yes                    ;
-; mux:mux_inst|buswires[1]                            ; mux:mux_inst|always0 ; yes                    ;
-; mux:mux_inst|buswires[2]                            ; mux:mux_inst|always0 ; yes                    ;
-; mux:mux_inst|buswires[3]                            ; mux:mux_inst|always0 ; yes                    ;
-; mux:mux_inst|buswires[4]                            ; mux:mux_inst|always0 ; yes                    ;
-; mux:mux_inst|buswires[5]                            ; mux:mux_inst|always0 ; yes                    ;
-; mux:mux_inst|buswires[6]                            ; mux:mux_inst|always0 ; yes                    ;
-; mux:mux_inst|buswires[7]                            ; mux:mux_inst|always0 ; yes                    ;
-; mux:mux_inst|buswires[8]                            ; mux:mux_inst|always0 ; yes                    ;
-; mux:mux_inst|buswires[9]                            ; mux:mux_inst|always0 ; yes                    ;
-; mux:mux_inst|buswires[10]                           ; mux:mux_inst|always0 ; yes                    ;
-; mux:mux_inst|buswires[11]                           ; mux:mux_inst|always0 ; yes                    ;
-; mux:mux_inst|buswires[12]                           ; mux:mux_inst|always0 ; yes                    ;
-; mux:mux_inst|buswires[13]                           ; mux:mux_inst|always0 ; yes                    ;
-; mux:mux_inst|buswires[14]                           ; mux:mux_inst|always0 ; yes                    ;
-; mux:mux_inst|buswires[15]                           ; mux:mux_inst|always0 ; yes                    ;
-; Number of user-specified and inferred latches = 16  ;                      ;                        ;
-+-----------------------------------------------------+----------------------+------------------------+
++------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                  ;
++-----------------------------------------------------+-----------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal   ; Free of Timing Hazards ;
++-----------------------------------------------------+-----------------------+------------------------+
+; mux:mux_inst|buswires[0]                            ; mux:mux_inst|always0  ; yes                    ;
+; mux:mux_inst|buswires[1]                            ; mux:mux_inst|always0  ; yes                    ;
+; mux:mux_inst|buswires[2]                            ; mux:mux_inst|always0  ; yes                    ;
+; mux:mux_inst|buswires[3]                            ; mux:mux_inst|always0  ; yes                    ;
+; mux:mux_inst|buswires[4]                            ; mux:mux_inst|always0  ; yes                    ;
+; mux:mux_inst|buswires[5]                            ; mux:mux_inst|always0  ; yes                    ;
+; mux:mux_inst|buswires[6]                            ; mux:mux_inst|always0  ; yes                    ;
+; mux:mux_inst|buswires[7]                            ; mux:mux_inst|always0  ; yes                    ;
+; mux:mux_inst|buswires[8]                            ; mux:mux_inst|always0  ; yes                    ;
+; mux:mux_inst|buswires[9]                            ; mux:mux_inst|always0  ; yes                    ;
+; mux:mux_inst|buswires[10]                           ; mux:mux_inst|always0  ; yes                    ;
+; mux:mux_inst|buswires[11]                           ; mux:mux_inst|always0  ; yes                    ;
+; mux:mux_inst|buswires[12]                           ; mux:mux_inst|always0  ; yes                    ;
+; mux:mux_inst|buswires[13]                           ; mux:mux_inst|always0  ; yes                    ;
+; mux:mux_inst|buswires[14]                           ; mux:mux_inst|always0  ; yes                    ;
+; mux:mux_inst|buswires[15]                           ; mux:mux_inst|always0  ; yes                    ;
+; addSub:addSub|data_out[0]                           ; addSub:addSub|always0 ; yes                    ;
+; addSub:addSub|data_out[1]                           ; addSub:addSub|always0 ; yes                    ;
+; addSub:addSub|data_out[2]                           ; addSub:addSub|always0 ; yes                    ;
+; addSub:addSub|data_out[3]                           ; addSub:addSub|always0 ; yes                    ;
+; addSub:addSub|data_out[4]                           ; addSub:addSub|always0 ; yes                    ;
+; addSub:addSub|data_out[5]                           ; addSub:addSub|always0 ; yes                    ;
+; addSub:addSub|data_out[6]                           ; addSub:addSub|always0 ; yes                    ;
+; addSub:addSub|data_out[7]                           ; addSub:addSub|always0 ; yes                    ;
+; addSub:addSub|data_out[8]                           ; addSub:addSub|always0 ; yes                    ;
+; addSub:addSub|data_out[9]                           ; addSub:addSub|always0 ; yes                    ;
+; addSub:addSub|data_out[10]                          ; addSub:addSub|always0 ; yes                    ;
+; addSub:addSub|data_out[11]                          ; addSub:addSub|always0 ; yes                    ;
+; addSub:addSub|data_out[12]                          ; addSub:addSub|always0 ; yes                    ;
+; addSub:addSub|data_out[13]                          ; addSub:addSub|always0 ; yes                    ;
+; addSub:addSub|data_out[14]                          ; addSub:addSub|always0 ; yes                    ;
+; addSub:addSub|data_out[15]                          ; addSub:addSub|always0 ; yes                    ;
+; Number of user-specified and inferred latches = 32  ;                       ;                        ;
++-----------------------------------------------------+-----------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -269,23 +288,24 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+---------------------------------------------+
 ; controle:ctrl|r7_out                   ; Stuck at GND due to stuck port data_in      ;
 ; controle:ctrl|r7_in                    ; Stuck at GND due to stuck port data_in      ;
-; controle:ctrl|r2_in                    ; Stuck at GND due to stuck port data_in      ;
-; controle:ctrl|r3_in                    ; Stuck at GND due to stuck port data_in      ;
+; controle:ctrl|comparacao               ; Stuck at GND due to stuck port data_in      ;
 ; controle:ctrl|r4_in                    ; Stuck at GND due to stuck port data_in      ;
 ; controle:ctrl|r5_in                    ; Stuck at GND due to stuck port data_in      ;
 ; controle:ctrl|r6_in                    ; Stuck at GND due to stuck port data_in      ;
-; registrador:reg2|data_out[0..15]       ; Stuck at GND due to stuck port clock_enable ;
-; registrador:reg3|data_out[0..15]       ; Stuck at GND due to stuck port clock_enable ;
-; registrador:reg4|data_out[0..15]       ; Stuck at GND due to stuck port clock_enable ;
-; registrador:reg5|data_out[0..15]       ; Stuck at GND due to stuck port clock_enable ;
-; registrador:reg6|data_out[0..15]       ; Stuck at GND due to stuck port clock_enable ;
-; controle:ctrl|r2_out                   ; Stuck at GND due to stuck port data_in      ;
-; controle:ctrl|r3_out                   ; Stuck at GND due to stuck port data_in      ;
 ; controle:ctrl|r4_out                   ; Stuck at GND due to stuck port data_in      ;
 ; controle:ctrl|r5_out                   ; Stuck at GND due to stuck port data_in      ;
 ; controle:ctrl|r6_out                   ; Stuck at GND due to stuck port data_in      ;
+; registrador:reg4|data_out[0..15]       ; Stuck at GND due to stuck port clock_enable ;
+; registrador:reg5|data_out[0..15]       ; Stuck at GND due to stuck port clock_enable ;
+; registrador:reg6|data_out[0..15]       ; Stuck at GND due to stuck port clock_enable ;
+; controle:ctrl|maior_menor              ; Stuck at GND due to stuck port data_in      ;
+; controle:ctrl|r3_in                    ; Stuck at GND due to stuck port data_in      ;
+; controle:ctrl|r3_out                   ; Stuck at GND due to stuck port data_in      ;
+; registrador:reg3|data_out[0..15]       ; Stuck at GND due to stuck port clock_enable ;
+; controle:ctrl|Tstate~6                 ; Lost fanout                                 ;
 ; controle:ctrl|Tstate~7                 ; Lost fanout                                 ;
-; Total Number of Removed Registers = 93 ;                                             ;
+; controle:ctrl|Tstate~8                 ; Lost fanout                                 ;
+; Total Number of Removed Registers = 79 ;                                             ;
 +----------------------------------------+---------------------------------------------+
 
 
@@ -294,22 +314,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------+---------------------------+---------------------------------------------------------------+
 ; Register name        ; Reason for Removal        ; Registers Removed due to This Register                        ;
 +----------------------+---------------------------+---------------------------------------------------------------+
-; controle:ctrl|r7_out ; Stuck at GND              ; registrador:reg2|data_out[0], registrador:reg2|data_out[1],   ;
-;                      ; due to stuck port data_in ; registrador:reg2|data_out[2], registrador:reg2|data_out[3],   ;
-;                      ;                           ; registrador:reg2|data_out[4], registrador:reg2|data_out[5],   ;
-;                      ;                           ; registrador:reg2|data_out[6], registrador:reg2|data_out[7],   ;
-;                      ;                           ; registrador:reg2|data_out[8], registrador:reg2|data_out[9],   ;
-;                      ;                           ; registrador:reg2|data_out[10], registrador:reg2|data_out[11], ;
-;                      ;                           ; registrador:reg2|data_out[12], registrador:reg2|data_out[13], ;
-;                      ;                           ; registrador:reg3|data_out[0], registrador:reg3|data_out[1],   ;
-;                      ;                           ; registrador:reg3|data_out[2], registrador:reg3|data_out[3],   ;
-;                      ;                           ; registrador:reg3|data_out[4], registrador:reg3|data_out[5],   ;
-;                      ;                           ; registrador:reg3|data_out[6], registrador:reg3|data_out[7],   ;
-;                      ;                           ; registrador:reg3|data_out[8], registrador:reg3|data_out[9],   ;
-;                      ;                           ; registrador:reg3|data_out[10], registrador:reg3|data_out[11], ;
-;                      ;                           ; registrador:reg3|data_out[12], registrador:reg3|data_out[13], ;
-;                      ;                           ; registrador:reg4|data_out[0], registrador:reg4|data_out[1],   ;
-;                      ;                           ; registrador:reg4|data_out[2], registrador:reg4|data_out[3],   ;
+; controle:ctrl|r7_out ; Stuck at GND              ; registrador:reg4|data_out[0], registrador:reg4|data_out[1],   ;
+;                      ; due to stuck port data_in ; registrador:reg4|data_out[2], registrador:reg4|data_out[3],   ;
 ;                      ;                           ; registrador:reg4|data_out[4], registrador:reg4|data_out[5],   ;
 ;                      ;                           ; registrador:reg4|data_out[6], registrador:reg4|data_out[7],   ;
 ;                      ;                           ; registrador:reg4|data_out[8], registrador:reg4|data_out[9],   ;
@@ -328,16 +334,21 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ;                      ;                           ; registrador:reg6|data_out[6], registrador:reg6|data_out[7],   ;
 ;                      ;                           ; registrador:reg6|data_out[8], registrador:reg6|data_out[9],   ;
 ;                      ;                           ; registrador:reg6|data_out[10], registrador:reg6|data_out[11], ;
-;                      ;                           ; registrador:reg6|data_out[12], registrador:reg6|data_out[13]  ;
-; controle:ctrl|r2_in  ; Stuck at GND              ; registrador:reg2|data_out[14], registrador:reg2|data_out[15]  ;
-;                      ; due to stuck port data_in ;                                                               ;
-; controle:ctrl|r3_in  ; Stuck at GND              ; registrador:reg3|data_out[14], registrador:reg3|data_out[15]  ;
-;                      ; due to stuck port data_in ;                                                               ;
+;                      ;                           ; registrador:reg6|data_out[12], registrador:reg6|data_out[13], ;
+;                      ;                           ; registrador:reg3|data_out[0], registrador:reg3|data_out[1],   ;
+;                      ;                           ; registrador:reg3|data_out[2], registrador:reg3|data_out[3],   ;
+;                      ;                           ; registrador:reg3|data_out[4], registrador:reg3|data_out[5],   ;
+;                      ;                           ; registrador:reg3|data_out[6], registrador:reg3|data_out[7],   ;
+;                      ;                           ; registrador:reg3|data_out[8], registrador:reg3|data_out[9],   ;
+;                      ;                           ; registrador:reg3|data_out[10], registrador:reg3|data_out[11], ;
+;                      ;                           ; registrador:reg3|data_out[12], registrador:reg3|data_out[13]  ;
 ; controle:ctrl|r4_in  ; Stuck at GND              ; registrador:reg4|data_out[14], registrador:reg4|data_out[15]  ;
 ;                      ; due to stuck port data_in ;                                                               ;
 ; controle:ctrl|r5_in  ; Stuck at GND              ; registrador:reg5|data_out[14], registrador:reg5|data_out[15]  ;
 ;                      ; due to stuck port data_in ;                                                               ;
 ; controle:ctrl|r6_in  ; Stuck at GND              ; registrador:reg6|data_out[14], registrador:reg6|data_out[15]  ;
+;                      ; due to stuck port data_in ;                                                               ;
+; controle:ctrl|r4_out ; Stuck at GND              ; registrador:reg3|data_out[14], registrador:reg3|data_out[15]  ;
 ;                      ; due to stuck port data_in ;                                                               ;
 +----------------------+---------------------------+---------------------------------------------------------------+
 
@@ -347,24 +358,28 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 93    ;
+; Total registers                              ; 114   ;
 ; Number of registers using Synchronous Clear  ; 1     ;
 ; Number of registers using Synchronous Load   ; 1     ;
 ; Number of registers using Asynchronous Clear ; 16    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 89    ;
+; Number of registers using Clock Enable       ; 109   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |pratica2|controle:ctrl|r1_in    ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |pratica2|mux:mux_inst|Selector1 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |pratica2|controle:ctrl|zero       ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |pratica2|controle:ctrl|r0_in      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |pratica2|addSub:addSub|Selector13 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |pratica2|controle:ctrl|r1_out     ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |pratica2|controle:ctrl|r1_out     ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 64 LEs               ; -16 LEs                ; No         ; |pratica2|mux:mux_inst|Selector0   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
 
 
 +------------------------------------------------------------+
@@ -372,13 +387,17 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------+-------+-----------------------------------+
 ; Parameter Name ; Value ; Type                              ;
 +----------------+-------+-----------------------------------+
-; MV             ; 000   ; Unsigned Binary                   ;
-; MVI            ; 001   ; Unsigned Binary                   ;
-; ADD            ; 010   ; Unsigned Binary                   ;
-; SUB            ; 011   ; Unsigned Binary                   ;
-; LD             ; 100   ; Unsigned Binary                   ;
-; ST             ; 101   ; Unsigned Binary                   ;
-; MVNZ           ; 110   ; Unsigned Binary                   ;
+; MV             ; 0000  ; Unsigned Binary                   ;
+; MVI            ; 0001  ; Unsigned Binary                   ;
+; ADD            ; 0010  ; Unsigned Binary                   ;
+; SUB            ; 0011  ; Unsigned Binary                   ;
+; LD             ; 0100  ; Unsigned Binary                   ;
+; ST             ; 0101  ; Unsigned Binary                   ;
+; MVNZ           ; 0110  ; Unsigned Binary                   ;
+; SLT            ; 0111  ; Unsigned Binary                   ;
+; CMP            ; 1000  ; Unsigned Binary                   ;
+; PUSH           ; 1001  ; Unsigned Binary                   ;
+; POP            ; 1010  ; Unsigned Binary                   ;
 ; T0             ; 000   ; Unsigned Binary                   ;
 ; T1             ; 001   ; Unsigned Binary                   ;
 ; T2             ; 010   ; Unsigned Binary                   ;
@@ -389,12 +408,24 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "controle:ctrl"                                                                                              ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                  ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; addr_in ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; dout_in ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; wren    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; memoria ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -404,7 +435,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Jul 26 19:28:24 2024
+    Info: Processing started: Sat Jul 27 17:26:31 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pratica2 -c pratica2
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file pratica2.v
@@ -438,13 +469,10 @@ Info (12021): Found 1 design units, including 1 entities, in source file decodif
     Info (12023): Found entity 1: decodificador
 Info (12021): Found 1 design units, including 1 entities, in source file toplevel.v
     Info (12023): Found entity 1: toplevel
-Info (12021): Found 1 design units, including 1 entities, in source file instrucoes_mem.v
-    Info (12023): Found entity 1: instrucoes_mem
-Warning (12019): Can't analyze file -- file memoria_instrucao.v is missing
 Warning (10236): Verilog HDL Implicit Net warning at pratica2.v(60): created implicit net for "addr_in"
 Warning (10236): Verilog HDL Implicit Net warning at pratica2.v(62): created implicit net for "dout_in"
 Info (12127): Elaborating entity "pratica2" for the top level hierarchy
-Warning (10850): Verilog HDL warning at pratica2.v(31): number of words (4) in memory file does not match the number of elements in the address range [0:7]
+Warning (10850): Verilog HDL warning at pratica2.v(31): number of words (5) in memory file does not match the number of elements in the address range [0:7]
 Warning (10030): Net "memoria.data_a" at pratica2.v(28) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "memoria.waddr_a" at pratica2.v(28) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "memoria.we_a" at pratica2.v(28) has no driver or initial value, using a default initial value '0'
@@ -471,61 +499,97 @@ Info (10041): Inferred latch for "buswires[13]" at mux.v(12)
 Info (10041): Inferred latch for "buswires[14]" at mux.v(12)
 Info (10041): Inferred latch for "buswires[15]" at mux.v(12)
 Info (12128): Elaborating entity "addSub" for hierarchy "addSub:addSub"
+Warning (10763): Verilog HDL warning at addSub.v(9): case statement has overlapping case item expressions with non-constant or don't care bits - unable to check case statement for completeness
+Warning (10270): Verilog HDL Case Statement warning at addSub.v(9): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at addSub.v(9): inferring latch(es) for variable "data_out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "data_out[0]" at addSub.v(9)
+Info (10041): Inferred latch for "data_out[1]" at addSub.v(9)
+Info (10041): Inferred latch for "data_out[2]" at addSub.v(9)
+Info (10041): Inferred latch for "data_out[3]" at addSub.v(9)
+Info (10041): Inferred latch for "data_out[4]" at addSub.v(9)
+Info (10041): Inferred latch for "data_out[5]" at addSub.v(9)
+Info (10041): Inferred latch for "data_out[6]" at addSub.v(9)
+Info (10041): Inferred latch for "data_out[7]" at addSub.v(9)
+Info (10041): Inferred latch for "data_out[8]" at addSub.v(9)
+Info (10041): Inferred latch for "data_out[9]" at addSub.v(9)
+Info (10041): Inferred latch for "data_out[10]" at addSub.v(9)
+Info (10041): Inferred latch for "data_out[11]" at addSub.v(9)
+Info (10041): Inferred latch for "data_out[12]" at addSub.v(9)
+Info (10041): Inferred latch for "data_out[13]" at addSub.v(9)
+Info (10041): Inferred latch for "data_out[14]" at addSub.v(9)
+Info (10041): Inferred latch for "data_out[15]" at addSub.v(9)
 Info (12128): Elaborating entity "controle" for hierarchy "controle:ctrl"
-Warning (10036): Verilog HDL or VHDL warning at controle.v(13): object "Instrucion" assigned a value but never read
-Warning (10855): Verilog HDL warning at controle.v(15): initial value for variable Instrucion should be constant
+Warning (10036): Verilog HDL or VHDL warning at controle.v(15): object "Instrucion" assigned a value but never read
+Warning (10855): Verilog HDL warning at controle.v(17): initial value for variable Instrucion should be constant
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276004): RAM logic "memoria" is uninferred due to inappropriate RAM size
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Verilog/pratica2desenv/db/pratica2.ram0_pratica2_c8381a4b.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13012): Latch mux:mux_inst|buswires[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|g_out
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|dinout
 Warning (13012): Latch mux:mux_inst|buswires[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|r0_out
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|dinout
 Warning (13012): Latch mux:mux_inst|buswires[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|g_out
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|dinout
 Warning (13012): Latch mux:mux_inst|buswires[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|r0_out
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|dinout
 Warning (13012): Latch mux:mux_inst|buswires[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|g_out
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|dinout
 Warning (13012): Latch mux:mux_inst|buswires[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|r0_out
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|dinout
 Warning (13012): Latch mux:mux_inst|buswires[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|g_out
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|dinout
 Warning (13012): Latch mux:mux_inst|buswires[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|r0_out
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|dinout
 Warning (13012): Latch mux:mux_inst|buswires[8] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|g_out
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|dinout
 Warning (13012): Latch mux:mux_inst|buswires[9] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|r0_out
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|dinout
 Warning (13012): Latch mux:mux_inst|buswires[10] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|g_out
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|dinout
 Warning (13012): Latch mux:mux_inst|buswires[11] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|r0_out
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|dinout
 Warning (13012): Latch mux:mux_inst|buswires[12] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|g_out
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|dinout
 Warning (13012): Latch mux:mux_inst|buswires[13] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|r0_out
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|dinout
 Warning (13012): Latch mux:mux_inst|buswires[14] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|g_out
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|dinout
 Warning (13012): Latch mux:mux_inst|buswires[15] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|r0_out
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|dinout
+Warning (13012): Latch addSub:addSub|data_out[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|soma
+Warning (13012): Latch addSub:addSub|data_out[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|soma
+Warning (13012): Latch addSub:addSub|data_out[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|soma
+Warning (13012): Latch addSub:addSub|data_out[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|soma
+Warning (13012): Latch addSub:addSub|data_out[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|soma
+Warning (13012): Latch addSub:addSub|data_out[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|soma
+Warning (13012): Latch addSub:addSub|data_out[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|soma
+Warning (13012): Latch addSub:addSub|data_out[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|soma
+Warning (13012): Latch addSub:addSub|data_out[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|soma
+Warning (13012): Latch addSub:addSub|data_out[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|soma
+Warning (13012): Latch addSub:addSub|data_out[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|soma
+Warning (13012): Latch addSub:addSub|data_out[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|soma
+Warning (13012): Latch addSub:addSub|data_out[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|soma
+Warning (13012): Latch addSub:addSub|data_out[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|soma
+Warning (13012): Latch addSub:addSub|data_out[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|soma
+Warning (13012): Latch addSub:addSub|data_out[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|soma
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "r2t[0]" is stuck at GND
-    Warning (13410): Pin "r2t[1]" is stuck at GND
-    Warning (13410): Pin "r2t[2]" is stuck at GND
-    Warning (13410): Pin "r2t[3]" is stuck at GND
-    Warning (13410): Pin "r2t[4]" is stuck at GND
-    Warning (13410): Pin "r2t[5]" is stuck at GND
-    Warning (13410): Pin "r2t[6]" is stuck at GND
-    Warning (13410): Pin "r2t[7]" is stuck at GND
-    Warning (13410): Pin "r2t[8]" is stuck at GND
-    Warning (13410): Pin "r2t[9]" is stuck at GND
-    Warning (13410): Pin "r2t[10]" is stuck at GND
-    Warning (13410): Pin "r2t[11]" is stuck at GND
-    Warning (13410): Pin "r2t[12]" is stuck at GND
-    Warning (13410): Pin "r2t[13]" is stuck at GND
-    Warning (13410): Pin "r2t[14]" is stuck at GND
-    Warning (13410): Pin "r2t[15]" is stuck at GND
     Warning (13410): Pin "r3t[0]" is stuck at GND
     Warning (13410): Pin "r3t[1]" is stuck at GND
     Warning (13410): Pin "r3t[2]" is stuck at GND
@@ -590,36 +654,34 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "r6t[13]" is stuck at GND
     Warning (13410): Pin "r6t[14]" is stuck at GND
     Warning (13410): Pin "r6t[15]" is stuck at GND
-    Warning (13410): Pin "r2_int" is stuck at GND
     Warning (13410): Pin "r3_int" is stuck at GND
     Warning (13410): Pin "r4_int" is stuck at GND
     Warning (13410): Pin "r5_int" is stuck at GND
     Warning (13410): Pin "r6_int" is stuck at GND
     Warning (13410): Pin "r7_int" is stuck at GND
-    Warning (13410): Pin "r2_outt" is stuck at GND
     Warning (13410): Pin "r3_outt" is stuck at GND
     Warning (13410): Pin "r4_outt" is stuck at GND
     Warning (13410): Pin "r5_outt" is stuck at GND
     Warning (13410): Pin "r6_outt" is stuck at GND
     Warning (13410): Pin "r7_outt" is stuck at GND
-    Warning (13410): Pin "irt[0]" is stuck at GND
+    Warning (13410): Pin "comparacaot" is stuck at GND
+    Warning (13410): Pin "maior_menort" is stuck at GND
     Warning (13410): Pin "irt[1]" is stuck at GND
     Warning (13410): Pin "irt[2]" is stuck at GND
-    Warning (13410): Pin "irt[4]" is stuck at GND
     Warning (13410): Pin "irt[5]" is stuck at GND
-    Warning (13410): Pin "irt[8]" is stuck at GND
-Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+    Warning (13410): Pin "irt[9]" is stuck at GND
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Verilog/pratica2desenv/output_files/pratica2.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 447 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 567 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 19 input pins
-    Info (21059): Implemented 239 output pins
-    Info (21061): Implemented 189 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 146 warnings
+    Info (21059): Implemented 244 output pins
+    Info (21061): Implemented 304 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 163 warnings
     Info: Peak virtual memory: 4597 megabytes
-    Info: Processing ended: Fri Jul 26 19:28:27 2024
-    Info: Elapsed time: 00:00:03
+    Info: Processing ended: Sat Jul 27 17:26:35 2024
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:03
 
 

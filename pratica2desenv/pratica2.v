@@ -1,13 +1,13 @@
 module pratica2(clock, din, run, resetn, q,r0t, r1t, r2t, r3t, r4t, r5t, r6t, r7t, At, Gt,
  r0_int, r1_int, r2_int, r3_int, r4_int, r5_int, r6_int, r7_int,
      r0_outt, r1_outt, r2_outt, r3_outt, r4_outt, r5_outt, r6_outt, r7_outt, g_outt, dinoutt,
-     a_int, g_int, add_subt, donet, addsub_outt, buswiret, irt);
+     a_int, g_int, add_subt, donet, addsub_outt, somat, comparacaot, zerot, maior_menort, buswiret, irt);
 	  
     input clock;
     input run;
     input resetn;
     input [15:0] din;
-    reg [8:0] ir; // Instrução no formato III XXX YYY
+    reg [9:0] ir; // Instrução no formato IIII XXX YYY
     output [15:0] q;
 
     // Sinais internos
@@ -15,27 +15,27 @@ module pratica2(clock, din, run, resetn, q,r0t, r1t, r2t, r3t, r4t, r5t, r6t, r7
     wire [15:0] r0, r1, r2, r3, r4, r5, r6, r7, A, G, addr, dout;
     wire r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, r6_in, r7_in;
     wire r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, g_out, dinout;
-    wire a_in, g_in, add_sub, done;
+    wire a_in, g_in, add_sub, soma, zero, maior_menor, comparacao, done;
     wire [15:0] addsub_out; // Sinal intermediário para a saída do addSub
 	 
 	 output [15:0]r0t, r1t, r2t, r3t, r4t, r5t, r6t, r7t, At, Gt, addsub_outt, buswiret;
 	 
 	 output r0_int, r1_int, r2_int, r3_int, r4_int, r5_int, r6_int, r7_int;
-    output r0_outt, r1_outt, r2_outt, r3_outt, r4_outt, r5_outt, r6_outt, r7_outt, g_outt, dinoutt;
+    output r0_outt, r1_outt, r2_outt, r3_outt, r4_outt, r5_outt, r6_outt, r7_outt, g_outt, somat, comparacaot, zerot, maior_menort, dinoutt;
     output a_int, g_int, add_subt, donet;
-	 output [8:0]irt;
+	 output [9:0]irt;
 	 
-	 reg [8:0] memoria [7:0]; //Tamanho 8, com 9 bits cada.
+	 reg [9:0] memoria [7:0]; //Tamanho 8, com 9 bits cada.
 	 integer index;
 	 initial begin
 		$readmemb("C:/Verilog/pratica2desenv/mem_file.mem", memoria); //inicializo a Memoria de instruções
 		index = 0;
-		ir = memoria[index][8:0];
+		ir = memoria[index][9:0];
    end
 	
 	always@(r7) begin
 		index = r7[7:0];
-		ir = memoria[index][8:0];
+		ir = memoria[index][9:0];
 	end
 
     // Instanciando os registradores
@@ -72,7 +72,8 @@ module pratica2(clock, din, run, resetn, q,r0t, r1t, r2t, r3t, r4t, r5t, r6t, r7
         .buswires(buswire)
     );
 	 
-	 addSub addSub(.add_sub(add_sub), .rx(A), .ry(buswire), .data_out(addsub_out));
+	 addSub addSub(.add_sub(add_sub), .soma(soma), .zero(zero), .maior_menor(maior_menor), 
+						.comparacao(comparacao), .rx(A), .ry(buswire), .g(G), .data_out(addsub_out));
 
     // Instanciando o módulo de controle
     controle ctrl (
@@ -85,7 +86,9 @@ module pratica2(clock, din, run, resetn, q,r0t, r1t, r2t, r3t, r4t, r5t, r6t, r7
         .r0_out(r0_out), .r1_out(r1_out), .r2_out(r2_out), .r3_out(r3_out),
         .r4_out(r4_out), .r5_out(r5_out), .r6_out(r6_out), .r7_out(r7_out),
         .a_in(a_in), .g_in(g_in), .g_out(g_out), .dinout(dinout), // Adicionando sinais de controle
-        .add_sub(add_sub), .done(done) // Adicionando controle de seleção
+        .add_sub(add_sub),
+		  .soma(soma), .zero(zero), .maior_menor(maior_menor), 
+		  .comparacao(comparacao), .done(done) // Adicionando controle de seleção
     );
 
     // Saída do processador
@@ -129,5 +132,9 @@ module pratica2(clock, din, run, resetn, q,r0t, r1t, r2t, r3t, r4t, r5t, r6t, r7
     assign add_subt = add_sub;
     assign donet = done;
 	 assign irt = ir;
+	 assign somat = soma;
+	 assign comparacaot = comparacao;
+	 assign zerot = zero;
+	 assign maior_menort = maior_menor;
 
 endmodule

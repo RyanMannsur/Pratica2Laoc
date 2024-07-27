@@ -6,25 +6,27 @@ module test_bench_controle;
 	reg run, resetn, clock; //Sinais de entrada
 	wire done, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, r6_in,
 			r7_in, r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out,
-			a_in, g_in, add_sub, dinout, g_out; //sinais de controle 
+			a_in, g_in, add_sub,
+			soma, zero, maior_menor, comparacao, addr_in, dout_in, wren, memoria,
+			dinout, g_out; //sinais de controle 
 	
 	initial begin
 		clock = 1'b0;
 		resetn = 1'b0;
 		run = 1'b1;
-		ir = 9'b001000000; //MVI R0 2
+		ir = 10'b0001000000; //MVI R0 2
 	end
 	
 	initial begin
 		#25 clock = 1'b1;//1
 		#25 clock = 1'b0; //0 
-		ir = 9'b000001000; //MV R1 R0
+		ir = 10'b0000001000; //MV R1 R0
 		
 		#25 clock = ~clock; //1  
 		
 		
 		#25 clock = 1'b0;//0
-		ir = 9'b010001001; //ADD R1 R1
+		ir = 10'b0010001001; //ADD R1 R1
 		#25 clock = 1'b1; //1
 		#25 clock = 1'b0; //0
 		#25 clock = 1'b1; //1
@@ -32,19 +34,25 @@ module test_bench_controle;
 		#25 clock = 1'b1; //1
 		
 		#25 clock = 1'b0; //0
-		ir = 9'b011010000; //SUB R2 R0
+		ir = 10'b0011010000; //SUB R2 R0
 		#25 clock = 1'b1; //1
 		#25 clock = 1'b0; //0
 		#25 clock = 1'b1; //1
 		#25 clock = 1'b0; //0
 		#25 clock = 1'b1; //1
 		
+		#25 clock = 1'b0; //0
+		ir = 10'b0110010001;
+		#25 clock = 1'b1; //1
+		#25 clock = 1'b0; //0
+		#25 clock = 1'b1; //1
 		#25 clock = 1'b0; //0
 		#25 clock = 1'b1; //1
 
 	end
 	
 		controle dut(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, r6_in, add_sub, dinout, g_out,
-					r7_in, r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, a_in, g_in, done);
+					r7_in, r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, a_in, g_in,
+				   soma, zero, maior_menor, comparacao, addr_in, dout_in, wren, memoria, done);
 
 endmodule

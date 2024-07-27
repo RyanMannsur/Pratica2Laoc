@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Fri Jul 26 19:28:27 2024
+Analysis & Synthesis Status : Successful - Sat Jul 27 17:26:35 2024
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : pratica2
 Top-level Entity Name : pratica2
 Family : Cyclone II
-Total logic elements : 155
-    Total combinational functions : 123
-    Dedicated logic registers : 93
-Total registers : 93
-Total pins : 258
+Total logic elements : 271
+    Total combinational functions : 223
+    Dedicated logic registers : 114
+Total registers : 114
+Total pins : 263
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

@@ -40,6 +40,12 @@
 # 
 # Top level modules:
 # 	registrador
+# vlog -vlog01compat -work work +incdir+C:/Verilog/pratica2desenv {C:/Verilog/pratica2desenv/memoria.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module memoria
+# 
+# Top level modules:
+# 	memoria
 # vlog -vlog01compat -work work +incdir+C:/Verilog/pratica2desenv {C:/Verilog/pratica2desenv/pratica2.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module pratica2
@@ -60,22 +66,19 @@
 # Loading work.pratica2
 # Loading work.registrador
 # Loading work.upcount
+# Loading work.memoria
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
 # Loading work.mux
 # Loading work.addSub
 # Loading work.controle
-# ** Warning: (vsim-3015) C:/Verilog/pratica2desenv/test_bench.v(55): [PCDPC] - Port size (10 or 10) does not match connection size (9) for port 'irt'. The port definition is at: C:/Verilog/pratica2desenv/pratica2.v(4).
-# 
-#         Region: /test_bench/dut
-# ** Warning: (vsim-3017) C:/Verilog/pratica2desenv/pratica2.v(92): [TFMPC] - Too few port connections. Expected 34, found 30.
+# ** Warning: (vsim-3017) C:/Verilog/pratica2desenv/pratica2.v(92): [TFMPC] - Too few port connections. Expected 37, found 35.
 # 
 #         Region: /test_bench/dut/ctrl
-# ** Warning: (vsim-3722) C:/Verilog/pratica2desenv/pratica2.v(92): [TFMPC] - Missing connection for port 'addr_in'.
+# ** Warning: (vsim-3722) C:/Verilog/pratica2desenv/pratica2.v(92): [TFMPC] - Missing connection for port 'memoria_ler'.
 # 
-# ** Warning: (vsim-3722) C:/Verilog/pratica2desenv/pratica2.v(92): [TFMPC] - Missing connection for port 'dout_in'.
-# 
-# ** Warning: (vsim-3722) C:/Verilog/pratica2desenv/pratica2.v(92): [TFMPC] - Missing connection for port 'wren'.
-# 
-# ** Warning: (vsim-3722) C:/Verilog/pratica2desenv/pratica2.v(92): [TFMPC] - Missing connection for port 'memoria'.
+# ** Warning: (vsim-3722) C:/Verilog/pratica2desenv/pratica2.v(92): [TFMPC] - Missing connection for port 'q_out'.
 # 
 # 
 # add wave *
@@ -84,3 +87,5 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
+# ** Warning: (vsim-PLI-3412) Memory address read on line 257 of file "memoria.ver" is out of bounds specified for readmem command.  (Current address [128], address range [0:127])    : C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_mf.v(45501)
+#    Time: 0 ps  Iteration: 0  Instance: /test_bench/dut/mem_principal/altsyncram_component

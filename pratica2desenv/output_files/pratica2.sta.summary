@@ -2,75 +2,75 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow Model Setup 'controle:ctrl|soma'
-Slack : -6.206
-TNS   : -86.371
-
-Type  : Slow Model Setup 'clock'
-Slack : -3.453
-TNS   : -247.407
+Type  : Slow Model Setup 'controle:ctrl|comparacao'
+Slack : -6.491
+TNS   : -86.513
 
 Type  : Slow Model Setup 'controle:ctrl|dinout'
-Slack : -2.471
-TNS   : -29.400
+Slack : -4.586
+TNS   : -60.224
+
+Type  : Slow Model Setup 'clock'
+Slack : -3.102
+TNS   : -362.731
 
 Type  : Slow Model Hold 'controle:ctrl|dinout'
-Slack : -3.446
-TNS   : -47.847
+Slack : -2.849
+TNS   : -35.339
 
-Type  : Slow Model Hold 'controle:ctrl|soma'
-Slack : -2.780
-TNS   : -38.390
+Type  : Slow Model Hold 'controle:ctrl|comparacao'
+Slack : -1.930
+TNS   : -23.966
 
 Type  : Slow Model Hold 'clock'
 Slack : 0.391
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'clock'
-Slack : -1.380
-TNS   : -115.380
+Slack : -2.000
+TNS   : -320.380
+
+Type  : Slow Model Minimum Pulse Width 'controle:ctrl|comparacao'
+Slack : 0.500
+TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'controle:ctrl|dinout'
 Slack : 0.500
 TNS   : 0.000
 
-Type  : Slow Model Minimum Pulse Width 'controle:ctrl|soma'
-Slack : 0.500
-TNS   : 0.000
+Type  : Fast Model Setup 'controle:ctrl|dinout'
+Slack : -2.531
+TNS   : -34.462
 
-Type  : Fast Model Setup 'controle:ctrl|soma'
-Slack : -2.159
-TNS   : -28.189
+Type  : Fast Model Setup 'controle:ctrl|comparacao'
+Slack : -2.234
+TNS   : -27.939
 
 Type  : Fast Model Setup 'clock'
-Slack : -0.890
-TNS   : -56.433
-
-Type  : Fast Model Setup 'controle:ctrl|dinout'
-Slack : -0.822
-TNS   : -8.607
+Slack : -1.460
+TNS   : -106.074
 
 Type  : Fast Model Hold 'controle:ctrl|dinout'
-Slack : -1.907
-TNS   : -27.064
-
-Type  : Fast Model Hold 'controle:ctrl|soma'
 Slack : -1.596
-TNS   : -22.754
+TNS   : -20.675
+
+Type  : Fast Model Hold 'controle:ctrl|comparacao'
+Slack : -1.208
+TNS   : -16.155
 
 Type  : Fast Model Hold 'clock'
-Slack : 0.215
+Slack : 0.065
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'clock'
-Slack : -1.380
-TNS   : -115.380
+Slack : -2.000
+TNS   : -320.380
 
-Type  : Fast Model Minimum Pulse Width 'controle:ctrl|dinout'
+Type  : Fast Model Minimum Pulse Width 'controle:ctrl|comparacao'
 Slack : 0.500
 TNS   : 0.000
 
-Type  : Fast Model Minimum Pulse Width 'controle:ctrl|soma'
+Type  : Fast Model Minimum Pulse Width 'controle:ctrl|dinout'
 Slack : 0.500
 TNS   : 0.000
 

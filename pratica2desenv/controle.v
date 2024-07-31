@@ -1,15 +1,16 @@
-module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, r6_in, add_sub, dinout, g_out,
+module controle(clock,ir,run, resetn, G, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, r6_in, add_sub, dinout, g_out,
 					r7_in, r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, a_in, g_in,
-				   soma, zero, maior_menor, comparacao, addr_in, dout_in, wren, memoria, done);
+				   soma, zero, maior_menor, comparacao, addr_in, dout_in, wren, memoria_ler, q_out, dout_out, done);
 //Bloco controle, feito para receber a instrução e mapear os sinais que serão usados nos outros
 //modulos
 					
 	input [9:0]ir; //instruções no formato IIII XXX YYY ou III XXX DDD
+	input [15:0]G;
 	input run, resetn, clock; //Sinais de entrada
 	output reg done, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, r6_in,
 			r7_in, r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out,
 			a_in, g_in, add_sub, soma, zero, maior_menor, comparacao, addr_in, 
-			dout_in, wren, memoria, dinout, g_out; //sinais de controle 
+			dout_in, dout_out, wren, memoria_ler, dinout, q_out, g_out; //sinais de controle 
 	
 	reg [2:0] Tstate; //estado
 	reg [3:0] Instrucion; //instruções
@@ -59,8 +60,10 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 			comparacao <= 1'b0;
 			addr_in <= 1'b0;
 			dout_in <= 1'b0;
-			memoria <= 1'b0;
+			memoria_ler <= 1'b0;
 			wren <= 1'b0;
+			dout_out <= 1'b0;
+			q_out <= 1'b0;
 		case(Tstate)
 			T0: if(run) begin
 				case (ir[9:6])
@@ -73,6 +76,7 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 							3'b100: r4_out <= 1'b1;
 							3'b101: r5_out <= 1'b1;
 							3'b110: r6_out <= 1'b1;
+							3'b111: r7_out <= 1'b1;
 						endcase
 						case (ir[5:3]) // ir = III XXX YYY
 							3'b000: r0_in <= 1'b1;
@@ -82,6 +86,7 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 							3'b100: r4_in <= 1'b1;
 							3'b101: r5_in <= 1'b1;
 							3'b110: r6_in <= 1'b1;
+							3'b111: r7_in <= 1'b1;
 						endcase
 						done <= 1'b1;
 					end
@@ -95,6 +100,7 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 							3'b100: r4_in <= 1'b1;
 							3'b101: r5_in <= 1'b1;
 							3'b110: r6_in <= 1'b1;
+							3'b111: r7_in <= 1'b1;
 						endcase
 						done <= 1'b1;
 					end
@@ -108,6 +114,7 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 							3'b100: r4_out <= 1'b1;
 							3'b101: r5_out <= 1'b1;
 							3'b110: r6_out <= 1'b1;
+							3'b111: r7_out <= 1'b1;
 						endcase
 					end
 					SUB: begin //RXin Ain 
@@ -120,11 +127,26 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 							3'b100: r4_out <= 1'b1;
 							3'b101: r5_out <= 1'b1;
 							3'b110: r6_out <= 1'b1;
+							3'b111: r7_out <= 1'b1;
 						endcase
 					end
-					MVNZ: begin //RXin Ain 
-						a_in <= 1'b1;
-						case (ir[5:3]) // ir = III XXX YYY
+					MVNZ: begin //RXout Rxin
+						if(G != 16'b0000000000000000) begin
+							case (ir[5:3]) // ir = III XXX YYY
+								3'b000: r0_in <= 1'b1;
+								3'b001: r1_in <= 1'b1;
+								3'b010: r2_in <= 1'b1;
+								3'b011: r3_in <= 1'b1;
+								3'b100: r4_in <= 1'b1;
+								3'b101: r5_in <= 1'b1;
+								3'b110: r6_in <= 1'b1;
+								3'b111: r7_in <= 1'b1;
+							endcase
+							done <= 1'b1;
+						end else begin
+							done <= 1'b1;
+						end
+						case (ir[2:0]) // ir = III XXX YYY
 							3'b000: r0_out <= 1'b1;
 							3'b001: r1_out <= 1'b1;
 							3'b010: r2_out <= 1'b1;
@@ -132,6 +154,7 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 							3'b100: r4_out <= 1'b1;
 							3'b101: r5_out <= 1'b1;
 							3'b110: r6_out <= 1'b1;
+							3'b111: r7_out <= 1'b1;
 						endcase
 					end
 					CMP: begin //RXin Ain 
@@ -144,11 +167,12 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 							3'b100: r4_out <= 1'b1;
 							3'b101: r5_out <= 1'b1;
 							3'b110: r6_out <= 1'b1;
+							3'b111: r7_out <= 1'b1;
 						endcase
 					end
-					LD: begin //RXin Addrin 
+					LD: begin //RYout Addrin 
 						addr_in <= 1'b1;
-						case (ir[5:3]) // ir = III XXX YYY
+						case (ir[2:0]) // ir = III XXX YYY
 							3'b000: r0_out <= 1'b1;
 							3'b001: r1_out <= 1'b1;
 							3'b010: r2_out <= 1'b1;
@@ -156,11 +180,12 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 							3'b100: r4_out <= 1'b1;
 							3'b101: r5_out <= 1'b1;
 							3'b110: r6_out <= 1'b1;
+							3'b111: r7_out <= 1'b1;
 						endcase
 					end
-					ST: begin //RXin Addrin 
+					ST: begin //RYout Addrin 
 						addr_in <= 1'b1;
-						case (ir[5:3]) // ir = III XXX YYY
+						case (ir[2:0]) // ir = III XXX YYY
 							3'b000: r0_out <= 1'b1;
 							3'b001: r1_out <= 1'b1;
 							3'b010: r2_out <= 1'b1;
@@ -168,6 +193,7 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 							3'b100: r4_out <= 1'b1;
 							3'b101: r5_out <= 1'b1;
 							3'b110: r6_out <= 1'b1;
+							3'b111: r7_out <= 1'b1;
 						endcase
 					end
 				endcase
@@ -187,6 +213,7 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 							3'b100: r4_out <= 1'b1;
 							3'b101: r5_out <= 1'b1;
 							3'b110: r6_out <= 1'b1;
+							3'b111: r7_out <= 1'b1;
 						endcase
 					end
 					SUB: begin //RYout Gin AddSub
@@ -201,19 +228,7 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 							3'b100: r4_out <= 1'b1;
 							3'b101: r5_out <= 1'b1;
 							3'b110: r6_out <= 1'b1;
-						endcase
-					end
-					MVNZ: begin //RYout Gin zero
-						g_in <= 1'b1;
-						zero <= 1'b1;
-						case (ir[2:0]) // ir = III XXX YYY
-							3'b000: r0_out <= 1'b1;
-							3'b001: r1_out <= 1'b1;
-							3'b010: r2_out <= 1'b1;
-							3'b011: r3_out <= 1'b1;
-							3'b100: r4_out <= 1'b1;
-							3'b101: r5_out <= 1'b1;
-							3'b110: r6_out <= 1'b1;
+							3'b111: r7_out <= 1'b1;
 						endcase
 					end
 					SLT: begin //RYout Gin maior_menor
@@ -227,6 +242,7 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 							3'b100: r4_out <= 1'b1;
 							3'b101: r5_out <= 1'b1;
 							3'b110: r6_out <= 1'b1;
+							3'b111: r7_out <= 1'b1;
 						endcase
 					end
 					CMP: begin //RYout Gin comparacao
@@ -240,11 +256,12 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 							3'b100: r4_out <= 1'b1;
 							3'b101: r5_out <= 1'b1;
 							3'b110: r6_out <= 1'b1;
+							3'b111: r7_out <= 1'b1;
 						endcase
 					end
-					LD: begin //RYout Doutin
+					LD: begin //RXout Doutin
 						dout_in <= 1'b1;
-						case (ir[2:0]) // ir = III XXX YYY
+						case (ir[5:3]) // ir = III XXX YYY
 							3'b000: r0_out <= 1'b1;
 							3'b001: r1_out <= 1'b1;
 							3'b010: r2_out <= 1'b1;
@@ -252,11 +269,12 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 							3'b100: r4_out <= 1'b1;
 							3'b101: r5_out <= 1'b1;
 							3'b110: r6_out <= 1'b1;
+							3'b111: r7_out <= 1'b1;
 						endcase
 					end
-					ST: begin //RYout Doutin
+					ST: begin //RXout Doutin
 						dout_in <= 1'b1;
-						case (ir[2:0]) // ir = III XXX YYY
+						case (ir[5:3]) // ir = III XXX YYY
 							3'b000: r0_out <= 1'b1;
 							3'b001: r1_out <= 1'b1;
 							3'b010: r2_out <= 1'b1;
@@ -264,6 +282,7 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 							3'b100: r4_out <= 1'b1;
 							3'b101: r5_out <= 1'b1;
 							3'b110: r6_out <= 1'b1;
+							3'b111: r7_out <= 1'b1;
 						endcase
 					end
 				endcase
@@ -281,6 +300,7 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 							3'b100: r4_in <= 1'b1;
 							3'b101: r5_in <= 1'b1;
 							3'b110: r6_in <= 1'b1;
+							3'b111: r7_in <= 1'b1;
 						endcase
 						done <= 1'b1;
 					end
@@ -294,19 +314,7 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 							3'b100: r4_in <= 1'b1;
 							3'b101: r5_in <= 1'b1;
 							3'b110: r6_in <= 1'b1;
-						endcase
-						done <= 1'b1;
-					end
-					MVNZ: begin //Gout RXin DONE
-						g_out <= 1'b1;
-						case (ir[5:3]) // ir = III XXX YYY
-							3'b000: r0_in <= 1'b1;
-							3'b001: r1_in <= 1'b1;
-							3'b010: r2_in <= 1'b1;
-							3'b011: r3_in <= 1'b1;
-							3'b100: r4_in <= 1'b1;
-							3'b101: r5_in <= 1'b1;
-							3'b110: r6_in <= 1'b1;
+							3'b111: r7_in <= 1'b1;
 						endcase
 						done <= 1'b1;
 					end
@@ -320,6 +328,7 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 							3'b100: r4_in <= 1'b1;
 							3'b101: r5_in <= 1'b1;
 							3'b110: r6_in <= 1'b1;
+							3'b111: r7_in <= 1'b1;
 						endcase
 						done <= 1'b1;
 					end
@@ -333,23 +342,26 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 							3'b100: r4_in <= 1'b1;
 							3'b101: r5_in <= 1'b1;
 							3'b110: r6_in <= 1'b1;
+							3'b111: r7_in <= 1'b1;
 						endcase
 						done <= 1'b1;
 					end
 					LD: begin //memoria
-						memoria <= 1'b1;
+						memoria_ler <= 1'b1;
 					end
 					ST: begin //memoria wren
-						memoria <= 1'b1;
+						memoria_ler <= 1'b1;
 						wren <= 1'b1;
+						done <= 1'b1;
 					end
 				endcase
 				Tstate = T3;
 			end
 			T3: if(run) begin
 				case (ir[9:6])
-					LD: begin //Gout RXin DONE
-						g_out <= 1'b1;
+					LD: begin //dout RXin DONE
+						q_out <= 1'b1;
+						dout_out <= 1'b1; 
 						case (ir[5:3]) // ir = III XXX YYY
 							3'b000: r0_in <= 1'b1;
 							3'b001: r1_in <= 1'b1;
@@ -358,19 +370,7 @@ module controle(clock,ir,run, resetn, r0_in, r1_in, r2_in, r3_in, r4_in, r5_in, 
 							3'b100: r4_in <= 1'b1;
 							3'b101: r5_in <= 1'b1;
 							3'b110: r6_in <= 1'b1;
-						endcase
-						done <= 1'b1;
-					end
-				ST: begin //Gout RXin DONE
-						g_out <= 1'b1;
-						case (ir[5:3]) // ir = III XXX YYY
-							3'b000: r0_in <= 1'b1;
-							3'b001: r1_in <= 1'b1;
-							3'b010: r2_in <= 1'b1;
-							3'b011: r3_in <= 1'b1;
-							3'b100: r4_in <= 1'b1;
-							3'b101: r5_in <= 1'b1;
-							3'b110: r6_in <= 1'b1;
+							3'b111: r7_in <= 1'b1;
 						endcase
 						done <= 1'b1;
 					end

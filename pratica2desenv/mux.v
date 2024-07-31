@@ -1,11 +1,11 @@
-module mux(din, r0, r1, r2, r3, r4, r5, r6, r7, 
+module mux(din, r0, r1, r2, r3, r4, r5, r6, r7, dout, 
 r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out,
- G, g_out, dinout, buswires);		
+ G, g_out, dinout, dout_out, buswires);		
 //Mux do registrador, a ideia aqui é que ao entrar com um valor
 //o mux defina qual registrador vai para o bus
 
-	input dinout, r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, g_out;
-	input [15:0] din, r0, r1, r2, r3, r4, r5, r6, r7, G;
+	input dinout, r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, g_out, dout_out;
+	input [15:0] din, r0, r1, r2, r3, r4, r5, r6, r7, G, dout;
 	output reg[15:0] buswires;
 	
 	always @(*) begin
@@ -20,6 +20,7 @@ r0_out, r1_out, r2_out, r3_out, r4_out, r5_out, r6_out, r7_out,
 				r6_out: buswires = r6;
 				r7_out: buswires = r7;
 				g_out: buswires = G;
+				dout_out: buswires = dout;
         endcase
     end
 

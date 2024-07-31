@@ -1,8 +1,8 @@
-module addSub(add_sub, soma, zero, maior_menor, comparacao, rx, ry, g, data_out);
+module addSub(add_sub, soma, maior_menor, comparacao, rx, ry, data_out);
 //modulo de soma e subtração, qnd o add_sub for 1 faz subtração
 
-	input add_sub, soma, zero, maior_menor, comparacao;
-	input [15:0] rx, ry, g;
+	input add_sub, soma, maior_menor, comparacao;
+	input [15:0] rx, ry;
 	output reg[15:0] data_out;
 	
 	always @(*) begin
@@ -14,13 +14,6 @@ module addSub(add_sub, soma, zero, maior_menor, comparacao, rx, ry, g, data_out)
 					data_out = rx + ry; // Adição
 				end
 			end
-			zero: begin
-				if(g != 16'b0) begin
-					data_out = ry; //MVNZ
-				end else begin
-					data_out = rx;
-				end
-			end
 			comparacao: begin
 				if(rx == ry) begin
 					data_out = 16'b1;
@@ -29,7 +22,7 @@ module addSub(add_sub, soma, zero, maior_menor, comparacao, rx, ry, g, data_out)
 				end
 			end
 			maior_menor: begin
-				if(rx<ry) begin
+				if(rx > ry) begin
 					data_out = 16'b1;
 				end else begin
 					data_out = 16'b0;

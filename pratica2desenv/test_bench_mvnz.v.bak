@@ -1,0 +1,25 @@
+module test_bench_mvnz;
+
+	 reg zero;
+    reg [15:0] rx, ry, g;
+    wire [15:0] data_out;
+	 
+	 mvnz dut(rx, g, ry, zero, data_out);
+	 
+	 
+	 initial begin
+		  add_sub = 1;
+        rx = 16'h0005;
+        ry = 16'h0003;
+		  g = 16'h0001;
+        #10;
+        $display("Adição: %h + %h = %h", rx, ry, data_out);
+
+        // Teste de subtração
+        g = 16'h0000;
+        #10;
+        $display("Subtração: %h - %h = %h", rx, ry, data_out);
+    end
+	 
+endmodule
+	

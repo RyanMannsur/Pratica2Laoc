@@ -25,6 +25,7 @@ entity controle is
         ir              : in     vl_logic_vector(9 downto 0);
         run             : in     vl_logic;
         resetn          : in     vl_logic;
+        G               : in     vl_logic_vector(15 downto 0);
         r0_in           : out    vl_logic;
         r1_in           : out    vl_logic;
         r2_in           : out    vl_logic;
@@ -53,7 +54,9 @@ entity controle is
         addr_in         : out    vl_logic;
         dout_in         : out    vl_logic;
         wren            : out    vl_logic;
-        memoria         : out    vl_logic;
+        memoria_ler     : out    vl_logic;
+        q_out           : out    vl_logic;
+        dout_out        : out    vl_logic;
         done            : out    vl_logic
     );
     attribute mti_svvh_generic_type : integer;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pratica2
-Sat Jul 27 17:26:35 2024
+Wed Jul 31 18:33:58 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,17 +13,21 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |pratica2|controle:ctrl|Tstate
-  9. User-Specified and Inferred Latches
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for User Entity Instance: controle:ctrl
- 15. Port Connectivity Checks: "controle:ctrl"
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
- 18. Analysis & Synthesis Suppressed Messages
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |pratica2|controle:ctrl|Tstate
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for memoria:mem_principal|altsyncram:altsyncram_component|altsyncram_42d1:auto_generated
+ 16. Parameter Settings for User Entity Instance: memoria:mem_principal|altsyncram:altsyncram_component
+ 17. Parameter Settings for User Entity Instance: controle:ctrl
+ 18. altsyncram Parameter Settings by Entity Instance
+ 19. Port Connectivity Checks: "controle:ctrl"
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
+ 22. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -49,18 +53,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jul 27 17:26:35 2024           ;
+; Analysis & Synthesis Status        ; Successful - Wed Jul 31 18:33:58 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; pratica2                                        ;
 ; Top-level Entity Name              ; pratica2                                        ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 271                                             ;
-;     Total combinational functions  ; 223                                             ;
-;     Dedicated logic registers      ; 114                                             ;
-; Total registers                    ; 114                                             ;
-; Total pins                         ; 263                                             ;
+; Total logic elements               ; 379                                             ;
+;     Total combinational functions  ; 292                                             ;
+;     Dedicated logic registers      ; 159                                             ;
+; Total registers                    ; 159                                             ;
+; Total pins                         ; 141                                             ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
+; Total memory bits                  ; 2,048                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
 ; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
@@ -162,19 +166,31 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path            ; Library ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------+---------+
-; pratica2.v                       ; yes             ; User Verilog HDL File        ; C:/Verilog/pratica2desenv/pratica2.v    ;         ;
-; mux.v                            ; yes             ; User Verilog HDL File        ; C:/Verilog/pratica2desenv/mux.v         ;         ;
-; addSub.v                         ; yes             ; User Verilog HDL File        ; C:/Verilog/pratica2desenv/addSub.v      ;         ;
-; upcount.v                        ; yes             ; User Verilog HDL File        ; C:/Verilog/pratica2desenv/upcount.v     ;         ;
-; controle.v                       ; yes             ; User Verilog HDL File        ; C:/Verilog/pratica2desenv/controle.v    ;         ;
-; registrador.v                    ; yes             ; User Verilog HDL File        ; C:/Verilog/pratica2desenv/registrador.v ;         ;
-; mem_file.mem                     ; yes             ; Auto-Found Unspecified File  ; C:/Verilog/pratica2desenv/mem_file.mem  ;         ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                     ;
++----------------------------------+-----------------+-----------------------------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                         ; File Name with Absolute Path                                            ; Library ;
++----------------------------------+-----------------+-----------------------------------+-------------------------------------------------------------------------+---------+
+; pratica2.v                       ; yes             ; User Verilog HDL File             ; C:/Verilog/pratica2desenv/pratica2.v                                    ;         ;
+; mux.v                            ; yes             ; User Verilog HDL File             ; C:/Verilog/pratica2desenv/mux.v                                         ;         ;
+; addSub.v                         ; yes             ; User Verilog HDL File             ; C:/Verilog/pratica2desenv/addSub.v                                      ;         ;
+; upcount.v                        ; yes             ; User Verilog HDL File             ; C:/Verilog/pratica2desenv/upcount.v                                     ;         ;
+; controle.v                       ; yes             ; User Verilog HDL File             ; C:/Verilog/pratica2desenv/controle.v                                    ;         ;
+; registrador.v                    ; yes             ; User Verilog HDL File             ; C:/Verilog/pratica2desenv/registrador.v                                 ;         ;
+; memoria.mif                      ; yes             ; User Memory Initialization File   ; C:/Verilog/pratica2desenv/memoria.mif                                   ;         ;
+; mem_file_code.mem                ; yes             ; Auto-Found Unspecified File       ; C:/Verilog/pratica2desenv/mem_file_code.mem                             ;         ;
+; memoria.v                        ; yes             ; Auto-Found Wizard-Generated File  ; C:/Verilog/pratica2desenv/memoria.v                                     ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                      ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                      ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                      ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                      ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                      ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                      ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                      ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                      ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                      ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_42d1.tdf           ; yes             ; Auto-Generated Megafunction       ; C:/Verilog/pratica2desenv/db/altsyncram_42d1.tdf                        ;         ;
++----------------------------------+-----------------+-----------------------------------+-------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -182,48 +198,73 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 271   ;
+; Estimated Total logic elements              ; 379   ;
 ;                                             ;       ;
-; Total combinational functions               ; 223   ;
+; Total combinational functions               ; 292   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 125   ;
-;     -- 3 input functions                    ; 58    ;
-;     -- <=2 input functions                  ; 40    ;
+;     -- 4 input functions                    ; 157   ;
+;     -- 3 input functions                    ; 93    ;
+;     -- <=2 input functions                  ; 42    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 193   ;
-;     -- arithmetic mode                      ; 30    ;
+;     -- normal mode                          ; 246   ;
+;     -- arithmetic mode                      ; 46    ;
 ;                                             ;       ;
-; Total registers                             ; 114   ;
-;     -- Dedicated logic registers            ; 114   ;
+; Total registers                             ; 159   ;
+;     -- Dedicated logic registers            ; 159   ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 263   ;
+; I/O pins                                    ; 141   ;
+; Total memory bits                           ; 2048  ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clock ;
-; Maximum fan-out                             ; 114   ;
-; Total fan-out                               ; 1271  ;
-; Average fan-out                             ; 2.12  ;
+; Maximum fan-out                             ; 175   ;
+; Total fan-out                               ; 1728  ;
+; Average fan-out                             ; 2.84  ;
 +---------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
-; |pratica2                  ; 223 (4)           ; 114 (0)      ; 0           ; 0            ; 0       ; 0         ; 263  ; 0            ; |pratica2                  ; work         ;
-;    |addSub:addSub|         ; 88 (88)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|addSub:addSub    ; work         ;
-;    |controle:ctrl|         ; 32 (32)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|controle:ctrl    ; work         ;
-;    |mux:mux_inst|          ; 83 (83)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|mux:mux_inst     ; work         ;
-;    |registrador:reg0|      ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|registrador:reg0 ; work         ;
-;    |registrador:reg1|      ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|registrador:reg1 ; work         ;
-;    |registrador:reg2|      ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|registrador:reg2 ; work         ;
-;    |registrador:regA|      ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|registrador:regA ; work         ;
-;    |registrador:regG|      ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|registrador:regG ; work         ;
-;    |upcount:reg7|          ; 16 (16)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|upcount:reg7     ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                   ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                            ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------+--------------+
+; |pratica2                                 ; 292 (8)           ; 159 (0)      ; 2048        ; 0            ; 0       ; 0         ; 141  ; 0            ; |pratica2                                                                                      ; work         ;
+;    |addSub:addSub|                        ; 94 (94)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|addSub:addSub                                                                        ; work         ;
+;    |controle:ctrl|                        ; 74 (74)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|controle:ctrl                                                                        ; work         ;
+;    |memoria:mem_principal|                ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|memoria:mem_principal                                                                ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|memoria:mem_principal|altsyncram:altsyncram_component                                ; work         ;
+;          |altsyncram_42d1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|memoria:mem_principal|altsyncram:altsyncram_component|altsyncram_42d1:auto_generated ; work         ;
+;    |mux:mux_inst|                         ; 100 (100)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|mux:mux_inst                                                                         ; work         ;
+;    |registrador:reg0|                     ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|registrador:reg0                                                                     ; work         ;
+;    |registrador:reg1|                     ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|registrador:reg1                                                                     ; work         ;
+;    |registrador:reg2|                     ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|registrador:reg2                                                                     ; work         ;
+;    |registrador:reg3|                     ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|registrador:reg3                                                                     ; work         ;
+;    |registrador:regADDR|                  ; 0 (0)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|registrador:regADDR                                                                  ; work         ;
+;    |registrador:regA|                     ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|registrador:regA                                                                     ; work         ;
+;    |registrador:regDOUT|                  ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|registrador:regDOUT                                                                  ; work         ;
+;    |registrador:regG|                     ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|registrador:regG                                                                     ; work         ;
+;    |upcount:reg7|                         ; 16 (16)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pratica2|upcount:reg7                                                                         ; work         ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                      ;
++-------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+-------------+
+; Name                                                                                            ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF         ;
++-------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+-------------+
+; memoria:mem_principal|altsyncram:altsyncram_component|altsyncram_42d1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 128          ; 16           ; --           ; --           ; 2048 ; memoria.mif ;
++-------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                 ;
++--------+--------------+---------+--------------+--------------+---------------------------------+-------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                 ; IP Include File                     ;
++--------+--------------+---------+--------------+--------------+---------------------------------+-------------------------------------+
+; Altera ; RAM: 1-PORT  ; N/A     ; N/A          ; N/A          ; |pratica2|memoria:mem_principal ; C:/Verilog/pratica2desenv/memoria.v ;
++--------+--------------+---------+--------------+--------------+---------------------------------+-------------------------------------+
 
 
 Encoding Type:  One-Hot
@@ -281,76 +322,73 @@ Encoding Type:  One-Hot
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+--------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                   ;
-+----------------------------------------+---------------------------------------------+
-; Register name                          ; Reason for Removal                          ;
-+----------------------------------------+---------------------------------------------+
-; controle:ctrl|r7_out                   ; Stuck at GND due to stuck port data_in      ;
-; controle:ctrl|r7_in                    ; Stuck at GND due to stuck port data_in      ;
-; controle:ctrl|comparacao               ; Stuck at GND due to stuck port data_in      ;
-; controle:ctrl|r4_in                    ; Stuck at GND due to stuck port data_in      ;
-; controle:ctrl|r5_in                    ; Stuck at GND due to stuck port data_in      ;
-; controle:ctrl|r6_in                    ; Stuck at GND due to stuck port data_in      ;
-; controle:ctrl|r4_out                   ; Stuck at GND due to stuck port data_in      ;
-; controle:ctrl|r5_out                   ; Stuck at GND due to stuck port data_in      ;
-; controle:ctrl|r6_out                   ; Stuck at GND due to stuck port data_in      ;
-; registrador:reg4|data_out[0..15]       ; Stuck at GND due to stuck port clock_enable ;
-; registrador:reg5|data_out[0..15]       ; Stuck at GND due to stuck port clock_enable ;
-; registrador:reg6|data_out[0..15]       ; Stuck at GND due to stuck port clock_enable ;
-; controle:ctrl|maior_menor              ; Stuck at GND due to stuck port data_in      ;
-; controle:ctrl|r3_in                    ; Stuck at GND due to stuck port data_in      ;
-; controle:ctrl|r3_out                   ; Stuck at GND due to stuck port data_in      ;
-; registrador:reg3|data_out[0..15]       ; Stuck at GND due to stuck port clock_enable ;
-; controle:ctrl|Tstate~6                 ; Lost fanout                                 ;
-; controle:ctrl|Tstate~7                 ; Lost fanout                                 ;
-; controle:ctrl|Tstate~8                 ; Lost fanout                                 ;
-; Total Number of Removed Registers = 79 ;                                             ;
-+----------------------------------------+---------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                      ;
-+----------------------+---------------------------+---------------------------------------------------------------+
-; Register name        ; Reason for Removal        ; Registers Removed due to This Register                        ;
-+----------------------+---------------------------+---------------------------------------------------------------+
-; controle:ctrl|r7_out ; Stuck at GND              ; registrador:reg4|data_out[0], registrador:reg4|data_out[1],   ;
-;                      ; due to stuck port data_in ; registrador:reg4|data_out[2], registrador:reg4|data_out[3],   ;
-;                      ;                           ; registrador:reg4|data_out[4], registrador:reg4|data_out[5],   ;
-;                      ;                           ; registrador:reg4|data_out[6], registrador:reg4|data_out[7],   ;
-;                      ;                           ; registrador:reg4|data_out[8], registrador:reg4|data_out[9],   ;
-;                      ;                           ; registrador:reg4|data_out[10], registrador:reg4|data_out[11], ;
-;                      ;                           ; registrador:reg4|data_out[12], registrador:reg4|data_out[13], ;
-;                      ;                           ; registrador:reg5|data_out[0], registrador:reg5|data_out[1],   ;
-;                      ;                           ; registrador:reg5|data_out[2], registrador:reg5|data_out[3],   ;
-;                      ;                           ; registrador:reg5|data_out[4], registrador:reg5|data_out[5],   ;
-;                      ;                           ; registrador:reg5|data_out[6], registrador:reg5|data_out[7],   ;
-;                      ;                           ; registrador:reg5|data_out[8], registrador:reg5|data_out[9],   ;
-;                      ;                           ; registrador:reg5|data_out[10], registrador:reg5|data_out[11], ;
-;                      ;                           ; registrador:reg5|data_out[12], registrador:reg5|data_out[13], ;
-;                      ;                           ; registrador:reg6|data_out[0], registrador:reg6|data_out[1],   ;
-;                      ;                           ; registrador:reg6|data_out[2], registrador:reg6|data_out[3],   ;
-;                      ;                           ; registrador:reg6|data_out[4], registrador:reg6|data_out[5],   ;
-;                      ;                           ; registrador:reg6|data_out[6], registrador:reg6|data_out[7],   ;
-;                      ;                           ; registrador:reg6|data_out[8], registrador:reg6|data_out[9],   ;
-;                      ;                           ; registrador:reg6|data_out[10], registrador:reg6|data_out[11], ;
-;                      ;                           ; registrador:reg6|data_out[12], registrador:reg6|data_out[13], ;
-;                      ;                           ; registrador:reg3|data_out[0], registrador:reg3|data_out[1],   ;
-;                      ;                           ; registrador:reg3|data_out[2], registrador:reg3|data_out[3],   ;
-;                      ;                           ; registrador:reg3|data_out[4], registrador:reg3|data_out[5],   ;
-;                      ;                           ; registrador:reg3|data_out[6], registrador:reg3|data_out[7],   ;
-;                      ;                           ; registrador:reg3|data_out[8], registrador:reg3|data_out[9],   ;
-;                      ;                           ; registrador:reg3|data_out[10], registrador:reg3|data_out[11], ;
-;                      ;                           ; registrador:reg3|data_out[12], registrador:reg3|data_out[13]  ;
-; controle:ctrl|r4_in  ; Stuck at GND              ; registrador:reg4|data_out[14], registrador:reg4|data_out[15]  ;
-;                      ; due to stuck port data_in ;                                                               ;
-; controle:ctrl|r5_in  ; Stuck at GND              ; registrador:reg5|data_out[14], registrador:reg5|data_out[15]  ;
-;                      ; due to stuck port data_in ;                                                               ;
-; controle:ctrl|r6_in  ; Stuck at GND              ; registrador:reg6|data_out[14], registrador:reg6|data_out[15]  ;
-;                      ; due to stuck port data_in ;                                                               ;
-; controle:ctrl|r4_out ; Stuck at GND              ; registrador:reg3|data_out[14], registrador:reg3|data_out[15]  ;
-;                      ; due to stuck port data_in ;                                                               ;
-+----------------------+---------------------------+---------------------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; controle:ctrl|r4_out                   ; Stuck at GND due to stuck port data_in ;
+; controle:ctrl|r5_out                   ; Stuck at GND due to stuck port data_in ;
+; controle:ctrl|r6_out                   ; Stuck at GND due to stuck port data_in ;
+; controle:ctrl|r7_out                   ; Stuck at GND due to stuck port data_in ;
+; controle:ctrl|r7_in                    ; Stuck at GND due to stuck port data_in ;
+; controle:ctrl|r4_in                    ; Stuck at GND due to stuck port data_in ;
+; controle:ctrl|r5_in                    ; Stuck at GND due to stuck port data_in ;
+; controle:ctrl|r6_in                    ; Stuck at GND due to stuck port data_in ;
+; registrador:reg4|data_out[0]           ; Lost fanout                            ;
+; registrador:reg5|data_out[0]           ; Lost fanout                            ;
+; registrador:reg6|data_out[0]           ; Lost fanout                            ;
+; registrador:reg4|data_out[1]           ; Lost fanout                            ;
+; registrador:reg5|data_out[1]           ; Lost fanout                            ;
+; registrador:reg6|data_out[1]           ; Lost fanout                            ;
+; registrador:reg4|data_out[2]           ; Lost fanout                            ;
+; registrador:reg5|data_out[2]           ; Lost fanout                            ;
+; registrador:reg6|data_out[2]           ; Lost fanout                            ;
+; registrador:reg4|data_out[3]           ; Lost fanout                            ;
+; registrador:reg5|data_out[3]           ; Lost fanout                            ;
+; registrador:reg6|data_out[3]           ; Lost fanout                            ;
+; registrador:reg4|data_out[4]           ; Lost fanout                            ;
+; registrador:reg5|data_out[4]           ; Lost fanout                            ;
+; registrador:reg6|data_out[4]           ; Lost fanout                            ;
+; registrador:reg4|data_out[5]           ; Lost fanout                            ;
+; registrador:reg5|data_out[5]           ; Lost fanout                            ;
+; registrador:reg6|data_out[5]           ; Lost fanout                            ;
+; registrador:reg4|data_out[6]           ; Lost fanout                            ;
+; registrador:reg5|data_out[6]           ; Lost fanout                            ;
+; registrador:reg6|data_out[6]           ; Lost fanout                            ;
+; registrador:reg4|data_out[7]           ; Lost fanout                            ;
+; registrador:reg5|data_out[7]           ; Lost fanout                            ;
+; registrador:reg6|data_out[7]           ; Lost fanout                            ;
+; registrador:reg4|data_out[8]           ; Lost fanout                            ;
+; registrador:reg5|data_out[8]           ; Lost fanout                            ;
+; registrador:reg6|data_out[8]           ; Lost fanout                            ;
+; registrador:reg4|data_out[9]           ; Lost fanout                            ;
+; registrador:reg5|data_out[9]           ; Lost fanout                            ;
+; registrador:reg6|data_out[9]           ; Lost fanout                            ;
+; registrador:reg4|data_out[10]          ; Lost fanout                            ;
+; registrador:reg5|data_out[10]          ; Lost fanout                            ;
+; registrador:reg6|data_out[10]          ; Lost fanout                            ;
+; registrador:reg4|data_out[11]          ; Lost fanout                            ;
+; registrador:reg5|data_out[11]          ; Lost fanout                            ;
+; registrador:reg6|data_out[11]          ; Lost fanout                            ;
+; registrador:reg4|data_out[12]          ; Lost fanout                            ;
+; registrador:reg5|data_out[12]          ; Lost fanout                            ;
+; registrador:reg6|data_out[12]          ; Lost fanout                            ;
+; registrador:reg4|data_out[13]          ; Lost fanout                            ;
+; registrador:reg5|data_out[13]          ; Lost fanout                            ;
+; registrador:reg6|data_out[13]          ; Lost fanout                            ;
+; registrador:reg4|data_out[14]          ; Lost fanout                            ;
+; registrador:reg5|data_out[14]          ; Lost fanout                            ;
+; registrador:reg6|data_out[14]          ; Lost fanout                            ;
+; registrador:reg4|data_out[15]          ; Lost fanout                            ;
+; registrador:reg5|data_out[15]          ; Lost fanout                            ;
+; registrador:reg6|data_out[15]          ; Lost fanout                            ;
+; controle:ctrl|Tstate~6                 ; Lost fanout                            ;
+; controle:ctrl|Tstate~7                 ; Lost fanout                            ;
+; controle:ctrl|Tstate~8                 ; Lost fanout                            ;
+; controle:ctrl|r3_out                   ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 60 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -358,28 +396,98 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 114   ;
+; Total registers                              ; 159   ;
 ; Number of registers using Synchronous Clear  ; 1     ;
 ; Number of registers using Synchronous Load   ; 1     ;
 ; Number of registers using Asynchronous Clear ; 16    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 109   ;
+; Number of registers using Clock Enable       ; 138   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |pratica2|controle:ctrl|zero       ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |pratica2|controle:ctrl|r0_in      ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |pratica2|addSub:addSub|Selector13 ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |pratica2|controle:ctrl|r1_out     ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |pratica2|controle:ctrl|r1_out     ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 64 LEs               ; -16 LEs                ; No         ; |pratica2|mux:mux_inst|Selector0   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |pratica2|controle:ctrl|dinout   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |pratica2|controle:ctrl|soma     ;
+; 20:1               ; 4 bits    ; 52 LEs        ; 8 LEs                ; 44 LEs                 ; Yes        ; |pratica2|controle:ctrl|r2_in    ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |pratica2|controle:ctrl|r3_out   ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |pratica2|controle:ctrl|r0_out   ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 80 LEs               ; -16 LEs                ; No         ; |pratica2|mux:mux_inst|Selector2 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Source assignments for memoria:mem_principal|altsyncram:altsyncram_component|altsyncram_42d1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                            ;
++---------------------------------+--------------------+------+-----------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                             ;
++---------------------------------+--------------------+------+-----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memoria:mem_principal|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+----------------------------------------+
+; Parameter Name                     ; Value                ; Type                                   ;
++------------------------------------+----------------------+----------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                         ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                ;
+; WIDTH_A                            ; 16                   ; Signed Integer                         ;
+; WIDTHAD_A                          ; 7                    ; Signed Integer                         ;
+; NUMWORDS_A                         ; 128                  ; Signed Integer                         ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                ;
+; WIDTH_B                            ; 1                    ; Untyped                                ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                         ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                ;
+; INIT_FILE                          ; memoria.mif          ; Untyped                                ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                ;
+; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                                ;
+; CBXI_PARAMETER                     ; altsyncram_42d1      ; Untyped                                ;
++------------------------------------+----------------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +------------------------------------------------------------+
@@ -408,16 +516,35 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "controle:ctrl"                                                                                              ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                                                  ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; addr_in ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; dout_in ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; wren    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; memoria ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                  ;
++-------------------------------------------+-------------------------------------------------------+
+; Name                                      ; Value                                                 ;
++-------------------------------------------+-------------------------------------------------------+
+; Number of entity instances                ; 1                                                     ;
+; Entity Instance                           ; memoria:mem_principal|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                           ;
+;     -- WIDTH_A                            ; 16                                                    ;
+;     -- NUMWORDS_A                         ; 128                                                   ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                          ;
+;     -- WIDTH_B                            ; 1                                                     ;
+;     -- NUMWORDS_B                         ; 1                                                     ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                          ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                  ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                             ;
++-------------------------------------------+-------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "controle:ctrl"                                                                                                  ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                  ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; zero        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; memoria_ler ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q_out       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -435,7 +562,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Jul 27 17:26:31 2024
+    Info: Processing started: Wed Jul 31 18:33:53 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pratica2 -c pratica2
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file pratica2.v
@@ -443,8 +570,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file pratica
 Warning (12090): Entity "mux" obtained from "mux.v" instead of from Quartus II megafunction library
 Info (12021): Found 1 design units, including 1 entities, in source file mux.v
     Info (12023): Found entity 1: mux
-Info (12021): Found 1 design units, including 1 entities, in source file extensor.v
-    Info (12023): Found entity 1: extensor
+Warning (12019): Can't analyze file -- file extensor.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file addsub.v
     Info (12023): Found entity 1: addSub
 Info (12021): Found 1 design units, including 1 entities, in source file upcount.v
@@ -469,15 +595,41 @@ Info (12021): Found 1 design units, including 1 entities, in source file decodif
     Info (12023): Found entity 1: decodificador
 Info (12021): Found 1 design units, including 1 entities, in source file toplevel.v
     Info (12023): Found entity 1: toplevel
-Warning (10236): Verilog HDL Implicit Net warning at pratica2.v(60): created implicit net for "addr_in"
-Warning (10236): Verilog HDL Implicit Net warning at pratica2.v(62): created implicit net for "dout_in"
+Warning (12019): Can't analyze file -- file mvnz.v is missing
+Warning (12019): Can't analyze file -- file test_bench_mvnz.v is missing
+Warning (10236): Verilog HDL Implicit Net warning at pratica2.v(55): created implicit net for "addr_in"
+Warning (10236): Verilog HDL Implicit Net warning at pratica2.v(57): created implicit net for "dout_in"
+Warning (10236): Verilog HDL Implicit Net warning at pratica2.v(63): created implicit net for "wren"
 Info (12127): Elaborating entity "pratica2" for the top level hierarchy
-Warning (10850): Verilog HDL warning at pratica2.v(31): number of words (5) in memory file does not match the number of elements in the address range [0:7]
-Warning (10030): Net "memoria.data_a" at pratica2.v(28) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "memoria.waddr_a" at pratica2.v(28) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "memoria.we_a" at pratica2.v(28) has no driver or initial value, using a default initial value '0'
+Warning (10850): Verilog HDL warning at pratica2.v(25): number of words (12) in memory file does not match the number of elements in the address range [0:15]
+Warning (10030): Net "memoria_intrucao.data_a" at pratica2.v(22) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "memoria_intrucao.waddr_a" at pratica2.v(22) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "memoria_intrucao.we_a" at pratica2.v(22) has no driver or initial value, using a default initial value '0'
 Info (12128): Elaborating entity "registrador" for hierarchy "registrador:reg0"
 Info (12128): Elaborating entity "upcount" for hierarchy "upcount:reg7"
+Warning (12125): Using design file memoria.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: memoria
+Info (12128): Elaborating entity "memoria" for hierarchy "memoria:mem_principal"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "memoria:mem_principal|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "memoria:mem_principal|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "memoria:mem_principal|altsyncram:altsyncram_component" with the following parameter:
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "memoria.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone II"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "128"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "widthad_a" = "7"
+    Info (12134): Parameter "width_a" = "16"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_42d1.tdf
+    Info (12023): Found entity 1: altsyncram_42d1
+Info (12128): Elaborating entity "altsyncram_42d1" for hierarchy "memoria:mem_principal|altsyncram:altsyncram_component|altsyncram_42d1:auto_generated"
 Info (12128): Elaborating entity "mux" for hierarchy "mux:mux_inst"
 Warning (10763): Verilog HDL warning at mux.v(12): case statement has overlapping case item expressions with non-constant or don't care bits - unable to check case statement for completeness
 Warning (10270): Verilog HDL Case Statement warning at mux.v(12): incomplete case statement has no default case item
@@ -519,10 +671,10 @@ Info (10041): Inferred latch for "data_out[13]" at addSub.v(9)
 Info (10041): Inferred latch for "data_out[14]" at addSub.v(9)
 Info (10041): Inferred latch for "data_out[15]" at addSub.v(9)
 Info (12128): Elaborating entity "controle" for hierarchy "controle:ctrl"
-Warning (10036): Verilog HDL or VHDL warning at controle.v(15): object "Instrucion" assigned a value but never read
-Warning (10855): Verilog HDL warning at controle.v(17): initial value for variable Instrucion should be constant
+Warning (10036): Verilog HDL or VHDL warning at controle.v(16): object "Instrucion" assigned a value but never read
+Warning (10855): Verilog HDL warning at controle.v(18): initial value for variable Instrucion should be constant
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276004): RAM logic "memoria" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "memoria_intrucao" is uninferred due to inappropriate RAM size
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Verilog/pratica2desenv/db/pratica2.ram0_pratica2_c8381a4b.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13012): Latch mux:mux_inst|buswires[0] has unsafe behavior
@@ -558,7 +710,7 @@ Warning (13012): Latch mux:mux_inst|buswires[14] has unsafe behavior
 Warning (13012): Latch mux:mux_inst|buswires[15] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|dinout
 Warning (13012): Latch addSub:addSub|data_out[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|soma
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|maior_menor
 Warning (13012): Latch addSub:addSub|data_out[1] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|soma
 Warning (13012): Latch addSub:addSub|data_out[2] has unsafe behavior
@@ -590,99 +742,38 @@ Warning (13012): Latch addSub:addSub|data_out[14] has unsafe behavior
 Warning (13012): Latch addSub:addSub|data_out[15] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal controle:ctrl|soma
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "r3t[0]" is stuck at GND
-    Warning (13410): Pin "r3t[1]" is stuck at GND
-    Warning (13410): Pin "r3t[2]" is stuck at GND
-    Warning (13410): Pin "r3t[3]" is stuck at GND
-    Warning (13410): Pin "r3t[4]" is stuck at GND
-    Warning (13410): Pin "r3t[5]" is stuck at GND
-    Warning (13410): Pin "r3t[6]" is stuck at GND
-    Warning (13410): Pin "r3t[7]" is stuck at GND
-    Warning (13410): Pin "r3t[8]" is stuck at GND
-    Warning (13410): Pin "r3t[9]" is stuck at GND
-    Warning (13410): Pin "r3t[10]" is stuck at GND
-    Warning (13410): Pin "r3t[11]" is stuck at GND
-    Warning (13410): Pin "r3t[12]" is stuck at GND
-    Warning (13410): Pin "r3t[13]" is stuck at GND
-    Warning (13410): Pin "r3t[14]" is stuck at GND
-    Warning (13410): Pin "r3t[15]" is stuck at GND
-    Warning (13410): Pin "r4t[0]" is stuck at GND
-    Warning (13410): Pin "r4t[1]" is stuck at GND
-    Warning (13410): Pin "r4t[2]" is stuck at GND
-    Warning (13410): Pin "r4t[3]" is stuck at GND
-    Warning (13410): Pin "r4t[4]" is stuck at GND
-    Warning (13410): Pin "r4t[5]" is stuck at GND
-    Warning (13410): Pin "r4t[6]" is stuck at GND
-    Warning (13410): Pin "r4t[7]" is stuck at GND
-    Warning (13410): Pin "r4t[8]" is stuck at GND
-    Warning (13410): Pin "r4t[9]" is stuck at GND
-    Warning (13410): Pin "r4t[10]" is stuck at GND
-    Warning (13410): Pin "r4t[11]" is stuck at GND
-    Warning (13410): Pin "r4t[12]" is stuck at GND
-    Warning (13410): Pin "r4t[13]" is stuck at GND
-    Warning (13410): Pin "r4t[14]" is stuck at GND
-    Warning (13410): Pin "r4t[15]" is stuck at GND
-    Warning (13410): Pin "r5t[0]" is stuck at GND
-    Warning (13410): Pin "r5t[1]" is stuck at GND
-    Warning (13410): Pin "r5t[2]" is stuck at GND
-    Warning (13410): Pin "r5t[3]" is stuck at GND
-    Warning (13410): Pin "r5t[4]" is stuck at GND
-    Warning (13410): Pin "r5t[5]" is stuck at GND
-    Warning (13410): Pin "r5t[6]" is stuck at GND
-    Warning (13410): Pin "r5t[7]" is stuck at GND
-    Warning (13410): Pin "r5t[8]" is stuck at GND
-    Warning (13410): Pin "r5t[9]" is stuck at GND
-    Warning (13410): Pin "r5t[10]" is stuck at GND
-    Warning (13410): Pin "r5t[11]" is stuck at GND
-    Warning (13410): Pin "r5t[12]" is stuck at GND
-    Warning (13410): Pin "r5t[13]" is stuck at GND
-    Warning (13410): Pin "r5t[14]" is stuck at GND
-    Warning (13410): Pin "r5t[15]" is stuck at GND
-    Warning (13410): Pin "r6t[0]" is stuck at GND
-    Warning (13410): Pin "r6t[1]" is stuck at GND
-    Warning (13410): Pin "r6t[2]" is stuck at GND
-    Warning (13410): Pin "r6t[3]" is stuck at GND
-    Warning (13410): Pin "r6t[4]" is stuck at GND
-    Warning (13410): Pin "r6t[5]" is stuck at GND
-    Warning (13410): Pin "r6t[6]" is stuck at GND
-    Warning (13410): Pin "r6t[7]" is stuck at GND
-    Warning (13410): Pin "r6t[8]" is stuck at GND
-    Warning (13410): Pin "r6t[9]" is stuck at GND
-    Warning (13410): Pin "r6t[10]" is stuck at GND
-    Warning (13410): Pin "r6t[11]" is stuck at GND
-    Warning (13410): Pin "r6t[12]" is stuck at GND
-    Warning (13410): Pin "r6t[13]" is stuck at GND
-    Warning (13410): Pin "r6t[14]" is stuck at GND
-    Warning (13410): Pin "r6t[15]" is stuck at GND
-    Warning (13410): Pin "r3_int" is stuck at GND
-    Warning (13410): Pin "r4_int" is stuck at GND
-    Warning (13410): Pin "r5_int" is stuck at GND
-    Warning (13410): Pin "r6_int" is stuck at GND
-    Warning (13410): Pin "r7_int" is stuck at GND
-    Warning (13410): Pin "r3_outt" is stuck at GND
-    Warning (13410): Pin "r4_outt" is stuck at GND
-    Warning (13410): Pin "r5_outt" is stuck at GND
-    Warning (13410): Pin "r6_outt" is stuck at GND
-    Warning (13410): Pin "r7_outt" is stuck at GND
-    Warning (13410): Pin "comparacaot" is stuck at GND
-    Warning (13410): Pin "maior_menort" is stuck at GND
-    Warning (13410): Pin "irt[1]" is stuck at GND
     Warning (13410): Pin "irt[2]" is stuck at GND
     Warning (13410): Pin "irt[5]" is stuck at GND
-    Warning (13410): Pin "irt[9]" is stuck at GND
-Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+    Warning (13410): Pin "sp[0]" is stuck at VCC
+    Warning (13410): Pin "sp[1]" is stuck at GND
+    Warning (13410): Pin "sp[2]" is stuck at VCC
+    Warning (13410): Pin "sp[3]" is stuck at GND
+    Warning (13410): Pin "sp[4]" is stuck at GND
+    Warning (13410): Pin "sp[5]" is stuck at GND
+    Warning (13410): Pin "sp[6]" is stuck at GND
+    Warning (13410): Pin "sp[7]" is stuck at GND
+    Warning (13410): Pin "sp[8]" is stuck at GND
+    Warning (13410): Pin "sp[9]" is stuck at GND
+    Warning (13410): Pin "sp[10]" is stuck at GND
+    Warning (13410): Pin "sp[11]" is stuck at GND
+    Warning (13410): Pin "sp[12]" is stuck at GND
+    Warning (13410): Pin "sp[13]" is stuck at GND
+    Warning (13410): Pin "sp[14]" is stuck at GND
+    Warning (13410): Pin "sp[15]" is stuck at GND
+Info (17049): 51 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Verilog/pratica2desenv/output_files/pratica2.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 567 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 569 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 19 input pins
-    Info (21059): Implemented 244 output pins
-    Info (21061): Implemented 304 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 163 warnings
-    Info: Peak virtual memory: 4597 megabytes
-    Info: Processing ended: Sat Jul 27 17:26:35 2024
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:03
+    Info (21059): Implemented 122 output pins
+    Info (21061): Implemented 412 logic cells
+    Info (21064): Implemented 16 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 106 warnings
+    Info: Peak virtual memory: 4618 megabytes
+    Info: Processing ended: Wed Jul 31 18:33:58 2024
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:04
 
 
 +------------------------------------------+

@@ -6,6 +6,9 @@ module registrador(
     output reg [15:0] data_out
 );
 
+	initial begin
+		data_out = 16'b0;
+	end
 
     // Bloco sempre para atualizar o registrador
     always @(negedge clock) begin

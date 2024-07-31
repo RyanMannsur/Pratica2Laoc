@@ -11,6 +11,7 @@ entity mux is
         r5              : in     vl_logic_vector(15 downto 0);
         r6              : in     vl_logic_vector(15 downto 0);
         r7              : in     vl_logic_vector(15 downto 0);
+        dout            : in     vl_logic_vector(15 downto 0);
         r0_out          : in     vl_logic;
         r1_out          : in     vl_logic;
         r2_out          : in     vl_logic;
@@ -22,6 +23,7 @@ entity mux is
         G               : in     vl_logic_vector(15 downto 0);
         g_out           : in     vl_logic;
         dinout          : in     vl_logic;
+        dout_out        : in     vl_logic;
         buswires        : out    vl_logic_vector(15 downto 0)
     );
 end mux;
